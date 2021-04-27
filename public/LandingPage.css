@@ -3,6 +3,7 @@ header{
     height: 140px;
     background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
     align-items: center;
+    /*position:fixed;*/
 }
 
 header img{
@@ -32,37 +33,38 @@ a{
     align-items: center;
 }
 
+.movie-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+
+}
+
 .video{
-
-    width:126px;
-    height:182px; /*Esses valores vieram de algum lugar especifico?*/
-    background-color:rgba(255, 255, 255, 0.24);
-    margin: 4px;
-
+  background: url("https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_.jpg"); /*apenas por exemplo*/
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  height: 20vh;
 }
 
 .video:hover{
 
-    width:134px;
-    height:190px;
-    margin: 0px;
-    box-shadow: 0px 0px 20px 2px #0ff;
-}
-.slider{
+  box-shadow: 0px 0px 5px 5px #0ff;
 
-  display:  flex;
-  justify-items: center;
-  margin-left: 100px;
 }
-
 
 
 .topico{
-    margin-left: 164px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .footer{
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -85,4 +87,38 @@ a{
   font-size: 12px;
   margin: 20px;
   color: #606060;
+}
+
+@media (min-width: 359px) and (max-width: 1000px)  {
+  header{
+
+    display: block;
+    min-height: 4rem;
+    align-items: center;
+  }
+
+  .logo{
+    flex: 2;
+  }
+
+  .video_category{
+    font-size: 20px;
+  }
+  nav{
+    flex: 4;
+  }
+  .menu > li {
+    font-size: 1.8rem;
+  }
+  .movie-container{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .video{
+    min-height: 400px;
+    height: 60vh;
+  }
+
+
 }
