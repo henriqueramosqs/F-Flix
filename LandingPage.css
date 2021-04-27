@@ -1,0 +1,48 @@
+/*Syles gerais*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-color: rgba(20, 20, 20, 1);
+  font-family: 'Roboto', sans-serif;
+}
+header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
+}
+
+/* Header/menu styles*/
+.menu{
+  display: flex;
+  list-style: none;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  line-height: 3rem;
+}
+.menu > li{
+  flex: 1;
+}
+
+.logo{
+  flex: 1;
+}
+nav{
+  flex: 4;
+}
+
+/* main styles*/
+main{
+  color: white;
+}
+.topico{
+  font-size: 2.5rem;
+}
