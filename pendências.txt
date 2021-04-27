@@ -1,8 +1,7 @@
 Lista de pendências:
 
 -fazer o slider em carrossel (há um ug in do jquery para isso)
--colocar a logo na header e na favicon
+-colocar a logo no favicon
 -ajustar distâncias entre elementos fora do header
--colocar style em um arquivo externo
 -criar o footer
-
+-alinhamento e justificação dentro do header
