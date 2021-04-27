@@ -9,50 +9,106 @@ html{
 }
 
 body{
-  height: 100vh;
   background-color: rgba(20, 20, 20, 1);
   font-family: 'Roboto', sans-serif;
-
-  display: grid;
-  grid-template-rows: 10rem 1fr 10rem;
-  gap: 2rem;
 }
 header{
-display: flex;
-justify-content: space-between;
-align-items: center;
+display: block;
 background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
+}
+nav{
+  width: 100%;
 }
 
 /* Header/menu styles*/
 .menu{
+  width: 100%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   list-style: none;
-  font-size: 3rem;
   color: white;
   font-weight: bold;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 .menu > li{
   flex: 1;
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 .logo{
-  flex: 1;
-}
-nav{
-  flex: 4;
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
 }
 
 /* main styles*/
-.container{
-  color: white;
+.movie-container{
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
-.topico{
-  font-size: 2.5rem;
+.video{
+  background: white;
+  min-height: 300px;
+  height: 40vh;
 }
 
-/*
-*/
+
+@media (min-width: 500px) and (max-width: 1000px)  {
+  header{
+    display: flex;
+    min-height: 7rem;
+    align-items: center;
+  }
+  .logo{
+    flex: 2;
+  }
+  nav{
+    flex: 4;
+  }
+  .menu > li {
+    font-size: 1.8rem;
+  }
+  .movie-container{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .video{
+    height: 35vh;
+  }
+
+  
+}
+
+@media (min-width:1001px){
+  header{
+    display: flex;
+    min-height: 10rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .logo{
+    flex: 2;
+  }
+  nav{
+    flex: 4;
+  }
+  .menu > li {
+    font-size: 2rem;
+  }
+  main{
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    
+  }
+  .movie-container{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 3rem;
+  }
+}
