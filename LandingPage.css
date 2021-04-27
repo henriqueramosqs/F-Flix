@@ -16,6 +16,16 @@ header{
 display: block;
 background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
 }
+
+a{
+  cursor: pointer;
+}
+
+a:hover{
+  color: rgb(146, 146, 146);
+  transition: 0.5s;
+}
+
 nav{
   width: 100%;
 }
