@@ -23,37 +23,74 @@
             <a class ="video_category">Séries</a>
             <a class ="video_category">Animes</a>
         </header>
-       
-        <a class="topico">Em alta</a>
-        <div class="slider demo">
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
+
+        <div id ='midst'>
+            <a class="topico">Em alta</a>
+            <div class="slider demo">
+                <div class="video"></div>
+                <div class="video"></div>
+                <div class="video"></div>
+                <div class="video"></div>
+                <div class="video"></div>
+                <div class="video"></div>
+            </div>
+
+
+            <a class="topico">Populares</a>
+            <div class="slider  responsive demo">
+                <div class="video">io</div>
+                <div class="video">asddsa</div>
+                <div class="video">asdasd</div>
+                <div class="video">asdasd</div>
+                <div class="video">dddd</div>
+                <div class="video">vfvfvfv</div>
+            </div>
         </div>
 
-        
-        <a class="topico">Populares</a>
-        <div class="slider demo">
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-            <div class="video"></div>
-        </div>
+        <div class="footer">
+            <img src="Logotipo.png" alt="Logotipo da F Flix">
+              <a>Enviar feedback</a>
+              <a>Ajuda</a>
+              <a>@2021, squad-4</a>
+          </div>
 
         <script>
-        $('.slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 4
-            });
+          $('.responsive').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+            },
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+            },
+            {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            }
+        ]
+        });
+	
 	
         </script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <body>
+    </body>
 </html>
-
 
