@@ -59,7 +59,7 @@ nav{
 
 @media (min-width: 500px) and (max-width: 1000px)  {
   header{
-    display: flex;
+    display: block;
     min-height: 7rem;
     align-items: center;
   }
