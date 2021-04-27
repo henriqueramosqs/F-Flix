@@ -1,0 +1,23 @@
+{
+  "name": "squad04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriqueramosqs/squad_04.git"
+  },
+  "author": "Henrique Ramos, Renan Tomazini, Gabriel Pires, Renan Loureiro, Matheus de Gondra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henriqueramosqs/squad_04/issues"
+  },
+  "homepage": "https://github.com/henriqueramosqs/squad_04#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}

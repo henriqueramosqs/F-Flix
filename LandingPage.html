@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>F Flix</title>
+        <script src="/path/to/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="LandingPage.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">    
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <style>
+            header{
+                width: 100%;
+                height: 158px;
+                background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
+                align-items: center;
+            }
+
+            body{
+                margin: 0px;
+                background-color: rgba(20, 20, 20, 1);
+            }
+
+            a{
+                color: white;
+                font-size: 40px;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .video_category{
+                line-height: 47px; 
+                margin-left: 16px;
+            }
+
+            .video{
+                width:126px;
+                height:182px;
+                background-color:rgba(255, 255, 255, 0.24);
+                margin: 4px;
+            }
+            .slider{
+                display:  flex;
+            }
+          </style>
+    </head>
+    <body>
+        <header>
+            <a class ="video_category">Início</a>
+            <a class ="video_category">Filmes</a>
+            <a class ="video_category">Séries</a>
+            <a class ="video_category">Animes</a>
+        </header>
+       
+        <a class="topico">Em alta</a>
+        <div class="slider demo">
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+        </div>
+
+        
+        <a class="topico">Populares</a>
+        <div class="slider demo">
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+            <div class="video"></div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                 $('.demo').slick();
+                });
+
+        </script>
+    <body>
+</html>
+
+
