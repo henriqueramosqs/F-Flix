@@ -1,0 +1,54 @@
+form{
+    background: linear-gradient(180deg, rgba(250, 95, 39, 0.0127388) 0.01%, #7E361B 0.02%, rgba(250, 95, 39, 0.012185) 86.98%);
+    width: 562px;
+    height: 555px;
+    margin:auto;
+    padding-top: 45px;
+}
+
+label,form,input{
+    border-radius: 10px;
+}
+#nome{
+    margin-top:0px ;
+}
+label{
+    font-family: "Roboto",sans-serif;
+    margin:70px 0px 10px 61px;
+    display: block;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgba(250,250,250,46%)
+}
+
+input:hover, input:focus{
+    outline: none  !important;
+}
+
+h1{
+    font-family: "Roboto",sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(250,250,250);
+    margin: 17px auto;
+    width: fit-content;
+}
+    
+input{
+    height: 30px;
+    color: rgb(250,250,250,46%);
+    padding-left: 17px;
+    width: 450px;
+    background-color: rgb(137,73,50);
+    border-width: 0px;
+    margin: auto;
+    display: block;
+}
+
+#mensage{
+    height: 150px;
+}
+button{
+    margin-left: 501px;
+    margin-top: 20px;
+}
