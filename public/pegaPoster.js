@@ -115,7 +115,6 @@ const getMovie = () => {
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
-      console.log(results);
       let list1 = results.slice(0, 10);
       let list2 = results.slice(10, 20);
       createCards(list1, "Em alta");
