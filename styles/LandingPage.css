@@ -19,6 +19,13 @@ display: block;
 background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
 }
 
+header img{
+  width: 20%;
+  margin: auto;
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
 a{
   cursor: pointer;
 }
@@ -200,7 +207,7 @@ footer{
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
-    
+
   }
 
   section{
@@ -245,4 +252,30 @@ footer{
   .info > h1{
     padding: 1rem;
   }
+}
+
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+footer img{
+  margin: auto;
+  padding-top: 10px;
+  width: 70px;
+  display: block;
+}
+
+footer a{
+  display:inline-table;
+  align-items: center;
+  font-size: 12px;
+  margin: 20px;
+  color: #606060;
 }
