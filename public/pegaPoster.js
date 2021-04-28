@@ -51,6 +51,8 @@
 //   }
 // });
 const main = document.querySelector("main");
+const url =
+  "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
 
 const createCard = (filme) => {
   let card = document.createElement("div");
@@ -84,14 +86,23 @@ const createCard = (filme) => {
 
 const createCards = (array, titulo) => {
   let section = document.createElement("section");
-  section.classList.add("movie-container");
+  let h1 = document.createElement("h1");
+  h1.textContent = titulo;
+
+  section.appendChild(h1);
+
+  let div = document.createElement("div");
+  div.classList.add("movie-container");
+
   array.forEach((obj) => {
     const { id, title, poster_path, overview } = obj;
     let filme = [id, title, poster_path, overview];
     let card = createCard(filme);
 
-    section.appendChild(card);
+    div.appendChild(card);
   });
+
+  section.appendChild(div);
 
   main.appendChild(section);
 };
@@ -106,7 +117,9 @@ const getMovie = () => {
       const { results } = response;
       console.log(results);
       let list1 = results.slice(0, 10);
-      createCards(list1);
+      let list2 = results.slice(10, 20);
+      createCards(list1, "Em alta");
+      createCards(list2, "Polupares");
     });
 };
 
