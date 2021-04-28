@@ -60,10 +60,32 @@ nav{
   gap: 1rem;
   padding: 1rem;
 }
+
 .video{
-  background: white;
-  min-height: 300px;
-  height: 40vh;
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+.poster{
+  width: 100%;
+  height: 90%;
+}
+.poster > img {
+  width: 100%;
+  height: 100%;
+}
+.info-hidden{
+  padding: 1rem;
+  font-size: 1.2rem;
+  visibility: hidden;
+}
+
+.info-visi{
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.info > h1{
+  padding: 1rem;
 }
 
 
@@ -88,10 +110,31 @@ nav{
     gap: 2rem;
   }
   .video{
-    height: 35vh;
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+  }
+  .poster{
+    width: 100%;
+    height: 90%;
+  }
+  .poster > img {
+    width: 100%;
+    height: 100%;
+  }
+  .info-hidden{
+    padding: 1rem;
+    font-size: 1.2rem;
+    visibility: hidden;
   }
 
-  
+  .info-visi{
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  .info > h1{
+    padding: 1rem;
+  }
 }
 
 @media (min-width:1001px){
@@ -120,5 +163,35 @@ nav{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 3rem;
     padding: 3rem;
+  }
+
+  .video{
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 8rem;
+  }
+  .video:hover{
+    transform: scale(1.1);
+  }
+  .poster{
+    width: 100%;
+    height: 100%;
+  }
+  .poster > img {
+    width: 100%;
+    height: 100%;
+  }
+  .info-hidden{
+    padding: 1rem;
+    font-size: 1.2rem;
+    visibility: hidden;
+  }
+
+  .info-visi{
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  .info > h1{
+    padding: 1rem;
   }
 }
