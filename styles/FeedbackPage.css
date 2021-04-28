@@ -6,7 +6,7 @@ form{
     padding-top: 45px;
 }
 
-label,form,input{
+label,form,input,button{
     border-radius: 10px;
 }
 #nome{
@@ -43,12 +43,22 @@ input{
     border-width: 0px;
     margin: auto;
     display: block;
+    text-align:start
 }
 
 #mensage{
     height: 150px;
 }
 button{
-    margin-left: 501px;
+    border-width: 0px;
+    margin-left: 430px;
     margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(137,73,50);
+    color: rgb(250,250,250,0.6)
+}
+
+button:focus{
+    outline: none;
 }
