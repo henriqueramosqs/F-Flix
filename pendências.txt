@@ -13,3 +13,4 @@
         -Responsidade
         -pseudo-classes do input e do botão de envio
         -mail:to
+        -Checar questão dos favicons
