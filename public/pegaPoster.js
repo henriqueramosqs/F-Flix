@@ -107,7 +107,6 @@ const createCards = (array, titulo) => {
   main.appendChild(section);
 };
 
-//
 const getMovie = () => {
   return fetch(
     "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1"
