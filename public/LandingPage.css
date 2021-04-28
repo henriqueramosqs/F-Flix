@@ -42,7 +42,7 @@ a{
 }
 
 .video{
-  background: url("https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@._V1_.jpg"); /*apenas por exemplo*/
+  background: orange; /*apenas por exemplo*/
   background-size: cover;
   background-position: center;
   min-height: 300px;
