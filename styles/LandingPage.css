@@ -171,7 +171,7 @@ section > h1 {
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
-    
+
   }
 
   section{
@@ -216,4 +216,30 @@ section > h1 {
   .info > h1{
     padding: 1rem;
   }
+}
+
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+footer img{
+  margin: auto;
+  padding-top: 10px;
+  width: 70px;
+  display: block;
+}
+
+footer a{
+  display:inline-table;
+  align-items: center;
+  font-size: 12px;
+  margin: 20px;
+  color: #606060;
 }
