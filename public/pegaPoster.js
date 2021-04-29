@@ -138,3 +138,7 @@ function getMovie(url, fn) {
     })
     .then(fn);
 }
+
+window.addEventListener("load", () => {
+  getMovie(url, createInicialPage);
+});
