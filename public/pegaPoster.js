@@ -51,8 +51,12 @@
 //   }
 // });
 const main = document.querySelector("main");
+const menu = document.querySelector(".menu");
+
 const url =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
+const urlFilmes =
+  "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=2";
 
 const createCard = (filme) => {
   let card = document.createElement("div");
@@ -86,10 +90,11 @@ const createCard = (filme) => {
 
 const createCards = (array, titulo) => {
   let section = document.createElement("section");
-  let h1 = document.createElement("h1");
-  h1.textContent = titulo;
-
-  section.appendChild(h1);
+  if (titulo) {
+    let h1 = document.createElement("h1");
+    h1.textContent = titulo;
+    section.appendChild(h1);
+  }
 
   let div = document.createElement("div");
   div.classList.add("movie-container");
@@ -107,18 +112,29 @@ const createCards = (array, titulo) => {
   main.appendChild(section);
 };
 
-const getMovie = () => {
-  return fetch(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1"
-  )
+const clearPage = () => {
+  main.innerHTML = "";
+};
+
+const createPage = (filmes) => {
+  clearPage();
+  createCards(filmes);
+};
+
+const createInicialPage = (filmes) => {
+  clearPage();
+  let list1 = filmes.slice(0, 10);
+  let list2 = filmes.slice(10, 20);
+  createCards(list1, "Em alta");
+  createCards(list2, "Populares");
+};
+
+function getMovie(url, fn) {
+  fetch(url)
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
-      let list1 = results.slice(0, 10);
-      let list2 = results.slice(10, 20);
-      createCards(list1, "Em alta");
-      createCards(list2, "Polupares");
-    });
-};
-
-getMovie();
+      return results;
+    })
+    .then(fn);
+}
