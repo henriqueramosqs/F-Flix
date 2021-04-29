@@ -2,11 +2,13 @@
 <html>
     <head>
         <title>F Flix</title>
-        <script src="/path/to/jquery.min.js"></script>
+        <script src="/path/to/jquery.min.js"></script>        
+        <link  rel="icon"  href="public/icon.png">
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles/base.css">
+        <link rel="stylesheet" href="./styles/LandingPage.css">
+        <link rel="stylesheet" href="./styles/FeedbackPage.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">    
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
         <style>
@@ -16,12 +18,12 @@
     <body>
         <header>
             <div class="logo">
-               <h1>LOGO</h1>
+                <img src="public/Logotipo.png" alt="Logotipo da F Flix">
             </div>
             <nav>
                 <ul class="menu">
-                    <li><a class ="video_category">Início</a></li>
-                    <li><a  class ="video_category">Filmes</a></li>
+                    <li><a href="LandingPage.html" class ="video_category">Início</a></li>
+                    <li><a class ="video_category">Filmes</a></li>
                     <li><a class ="video_category">Séries</a></li>
                     <li><a class ="video_category">Animes</a></li>
                 </ul>
@@ -29,21 +31,24 @@
             </nav>
         </header>
 
-        <main class="container">
-            <form>
-                <label for="name">Nome</label>
+            <h1>Sua opinião é bastante importante para nós</h1>
+            <form action="mailto:henriqueramos.qs@gmail.com" method="post" enctype="text/plain">
+                <label id="nome" for="name">Nome</label>
                 <input type="text" id="name" required>
                 
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
                 
-                <label for="mensage">Mensagem</label>
-                <input type="text" id="mensage" required>
+                <label  for="mensage">Mensagem</label>
+                <input id="mensage" type="text" id="mensage" required>
+                <button>Enviar</button>
             </form>
-       </main>
 
-       <footer>
-
-       </footer>
-    <body>
+        <div class="footer">
+            <img src="public/icon.png" alt="Logotipo da F Flix">
+                <a>Enviar feedback</a>
+                <a>Ajuda</a>
+                <a>2021, squad-4</a>
+        </div>
+    </body>
 </html>

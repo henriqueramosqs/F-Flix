@@ -254,10 +254,10 @@ footer{
   }
 }
 
-footer{
-  position: relative;
+.footer{
   left: 0;
   bottom: 0;
+  height: fit-content;
   width: 100%;
   background-color: #333333;
   color: white;
@@ -265,17 +265,18 @@ footer{
   text-align: center;
 }
 
-footer img{
+.footer img{
   margin: auto;
   padding-top: 10px;
   width: 70px;
   display: block;
 }
 
-footer a{
+.footer a{
   display:inline-table;
   align-items: center;
   font-size: 12px;
   margin: 20px;
   color: #606060;
 }
+

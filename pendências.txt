@@ -1,7 +1,15 @@
-Lista de pendências:
+----Lista de pendências----
 
--fazer o slider em carrossel (há um ug in do jquery para isso)
--colocar a logo no favicon
--ajustar distâncias entre elementos fora do header
--criar o footer
--alinhamento e justificação dentro do header
+ Landing Page:
+        -fazer o slider em carrossel (há um ug in do jquery para isso)
+        -colocar a logo no favicon
+        -ajustar distâncgit pias entre elementos fora do header
+        -criar o footer
+        -alinhamento e justificação dentro do header
+    
+    
+
+ Feedback Page:
+        -Responsidade
+        -mail:to
+        -Checar questão dos favicons
