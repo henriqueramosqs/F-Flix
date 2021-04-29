@@ -3,7 +3,7 @@
  Landing Page:
         -fazer o slider em carrossel (há um ug in do jquery para isso)
         -colocar a logo no favicon
-        -ajustar distâncias entre elementos fora do header
+        -ajustar distâncgit pias entre elementos fora do header
         -criar o footer
         -alinhamento e justificação dentro do header
     
@@ -11,6 +11,5 @@
 
  Feedback Page:
         -Responsidade
-        -pseudo-classes do input e do botão de envio
         -mail:to
         -Checar questão dos favicons

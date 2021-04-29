@@ -9,12 +9,21 @@ html{
 }
 
 body{
+  display: grid;
+  grid-template-rows: 12rem 1fr 10rem;
   background-color: rgba(20, 20, 20, 1);
   font-family: 'Roboto', sans-serif;
 }
 header{
 display: block;
 background:linear-gradient(to bottom,rgba(126, 54, 27, 1) 0%,rgba(20, 20, 20, 1) 100%);
+}
+
+header img{
+  width: 20%;
+  margin: auto;
+  margin-top:20px;
+  margin-bottom: 20px;
 }
 
 a{
@@ -24,6 +33,16 @@ a{
 a:hover{
   color: rgb(146, 146, 146);
   transition: 0.5s;
+}
+.logo{
+  display: flex;
+  width: 100%;
+  height: 6rem;
+  justify-content: center;
+  padding: 1rem;
+}
+.logo > img {
+  height: 100%;
 }
 
 nav{
@@ -43,44 +62,90 @@ nav{
 }
 .menu > li{
   flex: 1;
+  width: 10%;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
 }
 
-.logo{
-  text-align: center;
-  color: white;
-  font-size: 1.8rem;
-}
+
 
 /* main styles*/
+section{
+  color: white;
+  font-size: 1.5rem;
+}
+section > h1 {
+  padding-left: 3rem;
+}
 .movie-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
+
 .video{
-  background: white;
-  min-height: 300px;
-  height: 40vh;
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+.poster{
+  width: 100%;
+  height: 90%;
+}
+.poster > img {
+  width: 100%;
+  height: 100%;
+}
+.info-hidden{
+  padding: 1rem;
+  font-size: 1.2rem;
+  visibility: hidden;
+}
+
+.info-visi{
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.info > h1{
+  padding: 1rem;
+}
+
+footer{
+  color: white;
 }
 
 
-@media (min-width: 500px) and (max-width: 1000px)  {
+/* @media (min-width: 500px) and (max-width: 1000px)  {
   header{
-    display: block;
-    min-height: 7rem;
+    display: flex;
     align-items: center;
+    justify-content: space-around;
   }
   .logo{
-    flex: 2;
+    flex: none;
+    width: 20%;
+    min-width: 7rem;
+    height: 7rem;
+    padding-inline: 4rem;
+  }
+  .logo > img{
+    width: 100%;
+    height: 100%;
   }
   nav{
+
     flex: 4;
   }
   .menu > li {
-    font-size: 1.8rem;
+    font-size: 3rem;
+  }
+  section{
+    color: white;
+    font-size: 1.5rem;
+  }
+  section > h1 {
+    padding-left: 3rem;
   }
   .movie-container{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -88,37 +153,130 @@ nav{
     gap: 2rem;
   }
   .video{
-    height: 35vh;
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+  }
+  .poster{
+    width: 100%;
+    height: 90%;
+  }
+  .poster > img {
+    width: 100%;
+    height: 100%;
+  }
+  .info-hidden{
+    padding: 1rem;
+    font-size: 1.2rem;
+    visibility: hidden;
   }
 
-  
-}
+  .info-visi{
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  .info > h1{
+    padding: 1rem;
+  }
+} */
 
 @media (min-width:1001px){
   header{
     display: flex;
-    min-height: 10rem;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
   .logo{
-    flex: 2;
+    flex: none;
+    width: 12%;
+    min-width: 7rem;
+    height: 10rem;
+    padding-inline: 4rem;
+  }
+  .logo > img{
+    width: 100%;
+    height: 100%;
   }
   nav{
-    flex: 4;
+    width: 50%;
   }
   .menu > li {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   main{
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
-    
+
+  }
+
+  section{
+    color: white;
+    font-size: 1.5rem;
+  }
+  section > h1 {
+    padding-left: 3rem;
   }
   .movie-container{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 3rem;
     padding: 3rem;
   }
+
+  .video{
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 8rem;
+  }
+  .video:hover{
+    transform: scale(1.1);
+  }
+  .poster{
+    width: 100%;
+    height: 100%;
+  }
+  .poster > img {
+    width: 100%;
+    height: 100%;
+  }
+  .info-hidden{
+    padding: 1rem;
+    font-size: 1.2rem;
+    visibility: hidden;
+  }
+
+  .info-visi{
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  .info > h1{
+    padding: 1rem;
+  }
 }
+
+.footer{
+  left: 0;
+  bottom: 0;
+  height: fit-content;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+.footer img{
+  margin: auto;
+  padding-top: 10px;
+  width: 70px;
+  display: block;
+}
+
+.footer a{
+  display:inline-table;
+  align-items: center;
+  font-size: 12px;
+  margin: 20px;
+  color: #606060;
+}
+

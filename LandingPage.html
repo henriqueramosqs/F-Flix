@@ -5,22 +5,23 @@
         <meta charset="utf-8">
         <link  rel="icon"  href="public/icon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles/LandingPage.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">    
+        <link  rel="stylesheet" href="styles/LandingPage.css"> <!--não estou entendendo pq não estamos usando o padrão de acesso de html simples-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-        <style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="public/pegaPoster.js" defer></script>
 
-          </style>
     </head>
     <body>
         <header>
             <div class="logo">
-               <h1>LOGO</h1>
+                <img src="public/Logotipo.png" alt="Logotipo da F Flix">
             </div>
             <nav>
                 <ul class="menu">
                     <li><a class ="video_category">Início</a></li>
-                    <li><a  class ="video_category">Filmes</a></li>
+                    <li><a class ="video_category">Filmes</a></li>
                     <li><a class ="video_category">Séries</a></li>
                     <li><a class ="video_category">Animes</a></li>
                 </ul>
