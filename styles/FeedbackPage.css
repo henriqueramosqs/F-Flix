@@ -65,3 +65,5 @@ button{
 
 button:hover, button:focus{padding: 9px;}
 button:active{font-size: 18px;padding: 10px;}
+
+.footer{position: absolute}
