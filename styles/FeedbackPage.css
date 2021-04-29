@@ -1,3 +1,7 @@
+body{
+    grid-template-rows: 12rem 1fr 10rem 6fr;
+}
+
 form{
     background: linear-gradient(180deg, rgba(250, 95, 39, 0.0127388) 0.01%, #7E361B 0.02%, rgba(250, 95, 39, 0.012185) 86.98%);
     width: 562px;
@@ -66,4 +70,6 @@ button{
 button:hover, button:focus{padding: 9px;}
 button:active{font-size: 18px;padding: 10px;}
 
-.footer{position: absolute}
+.footer{
+    grid-row-start: 5;
+}
