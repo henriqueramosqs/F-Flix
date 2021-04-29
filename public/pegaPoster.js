@@ -142,3 +142,15 @@ function getMovie(url, fn) {
 window.addEventListener("load", () => {
   getMovie(url, createInicialPage);
 });
+
+menu.addEventListener("click", (e) => {
+  console.log(e.target);
+  let categoria = e.target;
+  let url;
+
+  if (categoria.id === "filmes") {
+    url = urlFilmes;
+  }
+
+  getMovie(url, createPage);
+});
