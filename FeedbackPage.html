@@ -59,10 +59,11 @@
         <script type="text/javascript">
         function sendEmail(){
             var params ={
-                from_name:document.getElementById("mensage").nodeValue,
-                message: document.getElementById("nome").nodeValue,
-                from_email: document.getElementById("email").nodeValue, 
+                from_name:document.getElementById("name").value,
+                message: document.getElementById("mensage").value,
+                from_email: document.getElementById("email").value
             }
+            console.log(params)
             emailjs.send("service_on0i63i",'template_dgtq4xi',params).then(
                 function(res){console.log(res.status)})
         }
