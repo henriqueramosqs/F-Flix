@@ -72,8 +72,10 @@ const clearPage = () => {
   main.innerHTML = "";
 };
 
-const createPage = (filmes) => {
+const createPage = async (url) => {
   clearPage();
+
+  const filmes = await getDados(url);
   createCards(filmes);
 };
 
