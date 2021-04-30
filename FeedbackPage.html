@@ -37,7 +37,7 @@
             </nav>
         </header>
 
-           <h1>Sua opinião é bastante importante para nós</h1>
+           <h1>Sua opinião é muito importante para nós</h1>
             <form  method="post" enctype="text/plain">
                 <label id="nome" for="name">Nome</label>
                 <input type="text" id="name" required>
@@ -49,14 +49,6 @@
                 <input id="mensage" type="text" id="mensage" required>
                 <button type="button" id="enviar" onclick="sendEmail()">Enviar</button>
             </form>
-            <!--<div class ='retorno'>
-                <a class="msg_de_retorno">Seu feedback foi enviado com suceso</a>
-                Em caso de erro: Oops! Eroor: 404
-                <a class="msg_de_retorno">Agradecemos a disposição 	&#x1F609;</a>
-                Em caso de erro: Por favor, tente novamente
-                <button id="voltar">Voltar para o início</button>
-            </div>-->
-
         <div class="footer">
             <img src="public/icon.png" alt="Logotipo da F Flix">
                 <a href="FeedbackPage.html">Enviar feedback</a>
@@ -65,28 +57,11 @@
         </div>
         <script type="text/javascript">
         function sendEmail(){
-            var params ={
-                from_name:document.getElementById("name").value,
-                message: document.getElementById("mensage").value,
-                from_email: document.getElementById("email").value
-            }
-            console.log(params)
-            emailjs.send("service_on0i63i",'template_dgtq4xi',params).then((res)=> {
-                if(res.status ==200){
-                     var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição &#x1F609;"]
-                }else{
-                    var textnode1 = "Oops! Eroor:" +res.status
-                    var textnodes =[textnode1,"Por favor, tente novamente"]
-                    var envioFalho = true
-                }
-             
-            console.log(textnodes)
             //esconde o form
             form = document.querySelector("form");
             form.setAttribute("class","hidden");
             h1= document.querySelector("h1").setAttribute("class","hidden")
-            
-            
+
             //cria caixa de retorno e os elementos componentes
             retorno = document.createElement('div');
             retorno.setAttribute("class", 'retorno');
@@ -98,19 +73,37 @@
             botao = document.createElement("button");    
             botao.innerText ='Voltar para o início'        
             botao.setAttribute("id","voltar");   
-            
 
-            a1.innerText=textnodes[0]
-            a2.innerText=textnodes[1]
+            document.body.appendChild(retorno)
+            retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
 
-            //anexa os elementos internos ao box de retorno
-            retorno.appendChild(a1)
-            retorno.appendChild(a2)
+       
             retorno.appendChild(botao)
 
             //anexa o retorno ao corpo do documento
-             document.body.appendChild(retorno)
-            
+           
+            var params ={
+                from_name:document.getElementById("name").value,
+                message: document.getElementById("mensage").value,
+                from_email: document.getElementById("email").value
+            }
+            console.log(params)
+            emailjs.send("service_on0i63i",'template_dgtq4xi',params).then((res)=> {
+              
+                if(res.status ==200){
+                     var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição &#x1F609;"]
+                }else{
+                    var textnode1 = "Oops! Eroor:" +res.status
+                    var textnodes =[textnode1,"Por favor, tente novamente"]
+                    var envioFalho = true
+                }    
+                
+            document.getElementById('carregando').remove()
+            //anexa os elementos internos ao box de retorno
+            retorno.appendChild(a1)
+            retorno.appendChild(a2)   
+            a1.innerText=textnodes[0]
+            a2.innerText=textnodes[1]
             })
         }
 
