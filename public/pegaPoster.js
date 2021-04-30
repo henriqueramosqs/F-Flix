@@ -86,15 +86,15 @@ const createInicialPage = (filmes) => {
   createCards(list2, "Populares");
 };
 
-function getMovie(url, fn) {
+const getDados = async (url, fn) => {
   fetch(url)
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
       return results;
     })
-    .then(fn);
-}
+    .catch((e) => console.log(e));
+};
 
 window.addEventListener("load", () => {
   getMovie(urlInicial, createInicialPage);
