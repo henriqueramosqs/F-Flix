@@ -78,10 +78,14 @@ const createPage = (filmes) => {
 };
 
 // Pagina inicial tem uma funcao propria, pq o array é dividido nela
-const createInicialPage = (filmes) => {
+const createInicialPage = async (url) => {
   clearPage();
+
+  const filmes = await getDados(url);
+
   let list1 = filmes.slice(0, 10);
   let list2 = filmes.slice(10, 20);
+
   createCards(list1, "Em alta");
   createCards(list2, "Populares");
 };
