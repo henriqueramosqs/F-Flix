@@ -1,0 +1,150 @@
+body{
+    grid-template-rows: 12rem 1fr 10rem 6fr;
+}
+
+form{
+    background: linear-gradient(180deg, rgba(250, 95, 39, 0.0127388) 0.01%, #7E361B 0.02%, rgba(250, 95, 39, 0.012185) 86.98%);
+    width: 562px;
+    height: 555px;
+    margin:auto;
+    padding-top: 45px;
+}
+
+label,form,input,button{
+    border-radius: 10px;
+}
+#nome{
+    margin-top:0px ;
+}
+label{
+    font-family: "Roboto",sans-serif;
+    margin:70px 0px 10px 61px;
+    display: block;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgba(250,250,250,46%)
+}
+
+input:hover, input:focus, button:hover, button:focus{
+    outline: none  !important;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #FFFFFF;
+}
+
+h1{
+    font-family: "Roboto",sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(250,250,250);
+    margin: 17px auto;
+    width: fit-content;
+}
+    
+input{
+    height: 30px;
+    color: rgb(250,250,250,46%);
+    padding-left: 17px;
+    width: 450px;
+    background-color: rgb(137,73,50);
+    border-width: 0px;
+    margin: auto;
+    display: block;
+    text-align:start
+}
+
+#mensage{
+    height: 150px;
+}
+button{
+    border-width: 0px;
+    margin-left: 430px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(137,73,50);
+    color: rgb(250,250,250,0.6)
+}
+
+
+button:hover, button:focus{padding: 9px;}
+button:active{font-size: 18px;padding: 10px;}
+
+.footer{
+    grid-row-start: 5;
+}
+
+.hidden{
+    display: none;}
+
+.retorno{
+    width:588px;
+    height:372px;
+    background: linear-gradient(180deg, #FC6027 0%, rgba(0, 0, 0, 0) 100%);
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.msg_de_retorno{
+    font-size: 28px;
+    font-weight: 700;
+    width: fit-content;
+    margin-top:80px;
+    display: inline-block;
+    color:white;
+}
+
+
+#voltar{
+    position: absolute;
+    bottom:26px;
+    font-size: 20px;
+    padding: 13px;
+    font-weight: bold;
+    right:14px
+}
+
+
+@media screen and (max-width: 375px){
+    body{
+        height: 100vh;
+        grid-template-rows: 1fr 1fr 3fr 1fr;
+    }
+
+    nav{
+        width: 90%;
+        margin-left: 22px;
+        height: 60%;
+    }
+
+    h1{
+        font-size: 30px;
+        margin: 35px 33px 17px 33px;
+
+    }
+
+    form{
+        width: 283px;
+        height: 372px;
+    }
+
+    label{
+        margin: 10px 0 10px 30px;
+    }
+
+    input{
+        width: 220px
+    }
+
+    button{
+        margin-left: 32px;
+        width: 220px;
+    }
+
+    .footer{
+        grid-row-start: 4;
+        margin-top: 65px;
+    }
+}
