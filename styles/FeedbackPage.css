@@ -147,4 +147,24 @@ button:active{font-size: 18px;padding: 10px;}
         grid-row-start: 4;
         margin-top: 65px;
     }
+
+    .retorno{
+            width: 283px;
+            height: 372px;
+    }
+
+    .msg_de_retorno{
+        font-size: 21px;
+        margin-top: 50px;
+    }
+
+    #voltar{
+        width: fit-content;
+        position: absolute;
+        bottom:26px;
+        font-size: 15px;
+        padding: 13px;
+        font-weight: bold;
+        right:14px
+    }
 }

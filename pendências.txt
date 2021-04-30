@@ -10,8 +10,5 @@
     
 
  Feedback Page:
-        -Responsidade
         -quando o box de retorno abre, o footer vai lá pra PQP
-        -caracteres de moji não estão codificados
         -botão de voltar não funciona
-        -lentidão

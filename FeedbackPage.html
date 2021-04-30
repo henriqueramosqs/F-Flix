@@ -4,7 +4,7 @@
         <title>F Flix</title>
         <script src="/path/to/jquery.min.js"></script>        
         <link  rel="icon"  href="public/icon.png">
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./styles/LandingPage.css">
         <link rel="stylesheet" href="./styles/FeedbackPage.css">
@@ -74,10 +74,9 @@
             botao.innerText ='Voltar para o início'        
             botao.setAttribute("id","voltar");   
 
-            document.body.appendChild(retorno)
+            document.body.insertBefore(retorno , document.querySelector('.footer'))
             retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
 
-       
             retorno.appendChild(botao)
 
             //anexa o retorno ao corpo do documento
@@ -91,7 +90,7 @@
             emailjs.send("service_on0i63i",'template_dgtq4xi',params).then((res)=> {
               
                 if(res.status ==200){
-                     var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição &#x1F609;"]
+                     var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição 😉"]
                 }else{
                     var textnode1 = "Oops! Eroor:" +res.status
                     var textnodes =[textnode1,"Por favor, tente novamente"]
