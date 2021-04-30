@@ -72,32 +72,42 @@ const clearPage = () => {
   main.innerHTML = "";
 };
 
-const createPage = (filmes) => {
+const createPage = async (url) => {
   clearPage();
+
+  const filmes = await getDados(url);
   createCards(filmes);
 };
 
 // Pagina inicial tem uma funcao propria, pq o array é dividido nela
-const createInicialPage = (filmes) => {
+const createInicialPage = async (url) => {
   clearPage();
+
+  const filmes = await getDados(url);
+  console.log(filmes);
+
   let list1 = filmes.slice(0, 10);
   let list2 = filmes.slice(10, 20);
+
   createCards(list1, "Em alta");
   createCards(list2, "Populares");
 };
 
-function getMovie(url, fn) {
-  fetch(url)
+const getDados = async (url) => {
+  return fetch(url)
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
       return results;
     })
-    .then(fn);
-}
+    .catch((e) => console.log(e));
+};
 
 window.addEventListener("load", () => {
-  getMovie(urlInicial, createInicialPage);
+  createInicialPage(urlInicial);
+});
+logo.addEventListener("click", () => {
+  createInicialPage(urlInicial);
 });
 
 menu.addEventListener("click", (e) => {
@@ -108,18 +118,15 @@ menu.addEventListener("click", (e) => {
 
   if (categoria === "inicio") {
     url = urlInicial;
-    func = createInicialPage;
-  } else if (categoria === "filmes") {
-    url = urlFilmes;
-  } else if (categoria === "series") {
-    url = urlSeries;
-  } else if (categoria === "animes") {
-    url = urlAnimes;
+    createInicialPage(url);
+  } else {
+    if (categoria === "filmes") {
+      url = urlFilmes;
+    } else if (categoria === "series") {
+      url = urlSeries;
+    } else if (categoria === "animes") {
+      url = urlAnimes;
+    }
+    createPage(url);
   }
-
-  getMovie(url, func);
-});
-
-logo.addEventListener("click", () => {
-  getMovie(urlInicial, createInicialPage);
 });
