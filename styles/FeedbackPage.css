@@ -116,6 +116,7 @@ button:active{font-size: 18px;padding: 10px;}
     nav{
         width: 90%;
         margin-left: 22px;
+        height: 60%;
     }
 
     h1{
