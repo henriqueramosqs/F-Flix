@@ -80,7 +80,32 @@ button:active{font-size: 18px;padding: 10px;}
         grid-template-rows: 1fr 1fr 3fr 1fr;
     }
 
+    h1{
+        font-size: 30px;
+        margin: 35px 33px 17px 33px;
+
+    }
+
+    form{
+        width: 283px;
+        height: 372px;
+    }
+
+    label{
+        margin: 10px 0 10px 30px;
+    }
+
+    input{
+        width: 220px
+    }
+
+    button{
+        margin-left: 32px;
+        width: 220px;
+    }
+
     .footer{
         grid-row-start: 4;
+        margin-top: 65px;
     }
 }
