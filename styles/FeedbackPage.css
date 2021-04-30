@@ -73,3 +73,35 @@ button:active{font-size: 18px;padding: 10px;}
 .footer{
     grid-row-start: 5;
 }
+
+.hidden{
+    display: none;}
+
+.retorno{
+    width:588px;
+    height:372px;
+    background: linear-gradient(180deg, #FC6027 0%, rgba(0, 0, 0, 0) 100%);
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.msg_de_retorno{
+    font-size: 28px;
+    font-weight: 700;
+    width: fit-content;
+    margin-top:80px;
+    display: inline-block;
+    color:white;
+}
+
+
+#voltar{
+    position: absolute;
+    bottom:26px;
+    font-size: 20px;
+    padding: 13px;
+    font-weight: bold;
+    right:14px
+}

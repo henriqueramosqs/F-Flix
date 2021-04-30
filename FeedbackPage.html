@@ -37,7 +37,7 @@
             </nav>
         </header>
 
-            <h1>Sua opinião é bastante importante para nós</h1>
+           <!-- <h1>Sua opinião é bastante importante para nós</h1>
             <form  method="post" enctype="text/plain">
                 <label id="nome" for="name">Nome</label>
                 <input type="text" id="name" required>
@@ -48,7 +48,14 @@
                 <label  for="mensage">Mensagem</label>
                 <input id="mensage" type="text" id="mensage" required>
                 <button type="button" id="enviar" onclick="sendEmail()">Enviar</button>
-            </form>
+            </form>-->
+            <div class ='retorno'>
+                <a class="msg_de_retorno">Seu feedback foi enviado com suceso</a>
+                <!--Em caso de erro: Oops! Eroor: 404-->
+                <a class="msg_de_retorno">Agradecemos a disposição 	&#x1F609;</a>
+                <!--Em caso de erro: Por favor, tente novamente-->
+                <button id="voltar">Voltar para o início</button>
+            </div>
 
         <div class="footer">
             <img src="public/icon.png" alt="Logotipo da F Flix">
@@ -65,8 +72,12 @@
             }
             console.log(params)
             emailjs.send("service_on0i63i",'template_dgtq4xi',params).then(
-                function(res){console.log(res.status)})
+               )
         }
+
+        
+        form = document.getElementsByTagName("form");
+        form.setAttribute("class","hidden")
          </script>
         </body>
 </html>
