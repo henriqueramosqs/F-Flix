@@ -84,6 +84,7 @@ const createInicialPage = async (url) => {
   clearPage();
 
   const filmes = await getDados(url);
+  console.log(filmes);
 
   let list1 = filmes.slice(0, 10);
   let list2 = filmes.slice(10, 20);
@@ -92,8 +93,8 @@ const createInicialPage = async (url) => {
   createCards(list2, "Populares");
 };
 
-const getDados = async (url, fn) => {
-  fetch(url)
+const getDados = async (url) => {
+  return fetch(url)
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
@@ -103,7 +104,10 @@ const getDados = async (url, fn) => {
 };
 
 window.addEventListener("load", () => {
-  getMovie(urlInicial, createInicialPage);
+  createInicialPage(urlInicial);
+});
+logo.addEventListener("click", () => {
+  createInicialPage(urlInicial);
 });
 
 menu.addEventListener("click", (e) => {
@@ -114,18 +118,15 @@ menu.addEventListener("click", (e) => {
 
   if (categoria === "inicio") {
     url = urlInicial;
-    func = createInicialPage;
-  } else if (categoria === "filmes") {
-    url = urlFilmes;
-  } else if (categoria === "series") {
-    url = urlSeries;
-  } else if (categoria === "animes") {
-    url = urlAnimes;
+    createInicialPage(url);
+  } else {
+    if (categoria === "filmes") {
+      url = urlFilmes;
+    } else if (categoria === "series") {
+      url = urlSeries;
+    } else if (categoria === "animes") {
+      url = urlAnimes;
+    }
+    createPage(url);
   }
-
-  getMovie(url, func);
-});
-
-logo.addEventListener("click", () => {
-  getMovie(urlInicial, createInicialPage);
 });
