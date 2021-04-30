@@ -113,6 +113,11 @@ button:active{font-size: 18px;padding: 10px;}
         grid-template-rows: 1fr 1fr 3fr 1fr;
     }
 
+    nav{
+        width: 90%;
+        margin-left: 22px;
+    }
+
     h1{
         font-size: 30px;
         margin: 35px 33px 17px 33px;
