@@ -73,3 +73,14 @@ button:active{font-size: 18px;padding: 10px;}
 .footer{
     grid-row-start: 5;
 }
+
+@media screen and (max-width: 375px){
+    body{
+        height: 100vh;
+        grid-template-rows: 1fr 1fr 3fr 1fr;
+    }
+
+    .footer{
+        grid-row-start: 4;
+    }
+}
