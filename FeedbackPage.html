@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>F Flix</title>
-        <script src="/path/to/jquery.min.js"></script>        
+        <script src="/path/to/jquery.min.js"></script>
         <link  rel="icon"  href="public/icon.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
         emailjs.init("user_Qg6qVekQv0T71NLSg91oZ");
         })();
         </script>
-        <link rel="preconnect" href="https://fonts.gstatic.com">    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
         <style>
 
@@ -28,10 +28,7 @@
             </div>
             <nav>
                 <ul class="menu">
-                    <li><a href="LandingPage.html" class ="video_category">Início</a></li>
-                    <li><a class ="video_category">Filmes</a></li>
-                    <li><a class ="video_category">Séries</a></li>
-                    <li><a class ="video_category">Animes</a></li>
+                    <li><a href="LandingPage.html" class ="video_category">Voltar</a></li>
                 </ul>
 
             </nav>
@@ -41,10 +38,10 @@
             <form  method="post" enctype="text/plain">
                 <label id="nome" for="name">Nome</label>
                 <input type="text" id="name" required>
-                
+
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
-                
+
                 <label  for="mensage">Mensagem</label>
                 <input id="mensage" type="text" id="mensage" required>
                 <button type="button" id="enviar" onclick="sendEmail()">Enviar</button>
@@ -53,7 +50,7 @@
             <img src="public/icon.png" alt="Logotipo da F Flix">
                 <a href="FeedbackPage.html">Enviar feedback</a>
                 <a>Ajuda</a>
-                <a>2021, squad-4</a>
+                <a class="team">© 2021, squad-4</a>
         </div>
         <script type="text/javascript">
         function sendEmail(){
@@ -69,10 +66,17 @@
             a1 =document.createElement("a");
             a1.setAttribute("class","msg_de_retorno");
             a2 = document.createElement("a");
+<<<<<<< HEAD
             a2.setAttribute("class","msg_de_retorno");     
             botao = document.createElement("button");    
             botao.innerText ='Voltar para o início'        
             botao.setAttribute("id","voltar");   
+=======
+            a2.setAttribute("class","msg_de_retorno");
+            botao = document.createElement("button");
+            botao.innerText ='Voltar para o início'
+            botao.setAttribute("id","voltar");
+>>>>>>> 75000c208006f77a3b6ca74699609f13c1fd82bb
 
             document.body.insertBefore(retorno , document.querySelector('.footer'))
             retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
@@ -80,6 +84,7 @@
             retorno.appendChild(botao)
 
             //anexa o retorno ao corpo do documento
+<<<<<<< HEAD
            
             var params ={
                 from_name:document.getElementById("name").value,
@@ -103,10 +108,14 @@
             retorno.appendChild(a2)   
             a1.innerText=textnodes[0]
             a2.innerText=textnodes[1]
+=======
+             document.body.appendChild(retorno)
+
+>>>>>>> 75000c208006f77a3b6ca74699609f13c1fd82bb
             })
         }
 
-        
+
 
          </script>
         </body>
