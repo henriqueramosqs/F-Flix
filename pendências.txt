@@ -13,3 +13,17 @@
  Feedback Page:
         -quando o box de retorno abre, o footer vai lá pra PQP
         -botão de voltar não funciona
+
+ Página de ajuda:
+
+       O Que é o Fflix?
+
+       -Fflix é um projeto criado para o programada de formação 2021 do Grupo FCamara
+       em parceria com Alura, onde você tem acesso aos trailer de diversos animes, 
+       filmes e séries.
+
+       Uma funcionalidade do site não funciona?
+
+       -Entre em contato com um membro da equipe da Fflix atravéz da página de feedback 
+       no fim do site.
+ 
