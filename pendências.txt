@@ -6,12 +6,10 @@
         -ajustar distâncgit pias entre elementos fora do header
         -criar o footer
         -alinhamento e justificação dentro do header
-    
-    
+        -ajeitar melhor visual do "quem somos"
+
+
 
  Feedback Page:
-        -Responsidade
         -quando o box de retorno abre, o footer vai lá pra PQP
-        -caracteres de moji não estão codificados
         -botão de voltar não funciona
-        -lentidão

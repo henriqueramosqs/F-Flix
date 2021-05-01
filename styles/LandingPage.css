@@ -26,7 +26,7 @@ header img{
   margin-top:20px;
   margin-bottom: 20px;
 }
-/* 
+/*
 a{
   cursor: pointer;
 }
@@ -124,7 +124,7 @@ footer{
 }
 
 
-@media (min-width:1000px){
+@media (min-width:768px){
   header{
     display: flex;
     align-items: center;
@@ -217,6 +217,7 @@ footer{
 }
 
 .footer a{
+  cursor: pointer;
   display:inline-table;
   align-items: center;
   font-size: 12px;
@@ -224,3 +225,34 @@ footer{
   color: #606060;
 }
 
+/*para squad*/
+
+.nossocontainer img{
+  float: left;
+  width: 50%;
+}
+
+.participantescontainer h1{
+  margin-bottom: : 5px;
+  color:white;
+}
+
+.participantescontainer a{
+  margin: 50px;
+  color:white;
+  text-decoration: none;
+}
+.participantescontainer a:hover{
+  color:orange;
+  text-decoration: none;
+
+}
+
+.membro {
+  margin-top: 10px;
+  color:rgb(126, 54, 27);
+}
+
+.participantescontainer img{
+  float: right;
+}
