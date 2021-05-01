@@ -1,5 +1,4 @@
 //este script é provisorio para alguns testes
 
-const logotipe = document.querySelector(".logo");
-
-logotipe.style.backgroundColor = "red";
+const time = document.querySelector(".footer");
+console.log(time);
