@@ -26,7 +26,7 @@ header img{
   margin-top:20px;
   margin-bottom: 20px;
 }
-/* 
+/*
 a{
   cursor: pointer;
 }
@@ -124,7 +124,7 @@ footer{
 }
 
 
-@media (min-width:1000px){
+@media (min-width:768px){
   header{
     display: flex;
     align-items: center;
@@ -223,4 +223,3 @@ footer{
   margin: 20px;
   color: #606060;
 }
-
