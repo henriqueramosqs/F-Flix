@@ -66,17 +66,10 @@
             a1 =document.createElement("a");
             a1.setAttribute("class","msg_de_retorno");
             a2 = document.createElement("a");
-<<<<<<< HEAD
-            a2.setAttribute("class","msg_de_retorno");     
-            botao = document.createElement("button");    
-            botao.innerText ='Voltar para o início'        
-            botao.setAttribute("id","voltar");   
-=======
             a2.setAttribute("class","msg_de_retorno");
             botao = document.createElement("button");
             botao.innerText ='Voltar para o início'
             botao.setAttribute("id","voltar");
->>>>>>> 75000c208006f77a3b6ca74699609f13c1fd82bb
 
             document.body.insertBefore(retorno , document.querySelector('.footer'))
             retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
@@ -84,34 +77,8 @@
             retorno.appendChild(botao)
 
             //anexa o retorno ao corpo do documento
-<<<<<<< HEAD
-           
-            var params ={
-                from_name:document.getElementById("name").value,
-                message: document.getElementById("mensage").value,
-                from_email: document.getElementById("email").value
-            }
-            console.log(params)
-            emailjs.send("service_on0i63i",'template_dgtq4xi',params).then((res)=> {
-              
-                if(res.status ==200){
-                     var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição 😉"]
-                }else{
-                    var textnode1 = "Oops! Eroor:" +res.status
-                    var textnodes =[textnode1,"Por favor, tente novamente"]
-                    var envioFalho = true
-                }    
-                
-            document.getElementById('carregando').remove()
-            //anexa os elementos internos ao box de retorno
-            retorno.appendChild(a1)
-            retorno.appendChild(a2)   
-            a1.innerText=textnodes[0]
-            a2.innerText=textnodes[1]
-=======
              document.body.appendChild(retorno)
 
->>>>>>> 75000c208006f77a3b6ca74699609f13c1fd82bb
             })
         }
 
