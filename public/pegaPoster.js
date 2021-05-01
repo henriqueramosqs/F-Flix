@@ -141,8 +141,8 @@ menu.addEventListener("click", (e) => {
 //pro squad
 const membro1 ={
     nome: "Matheus de Gondra",
-    linkedin: "https://github.com/Matheus-Gondra",
-    github: "https://www.linkedin.com/mwlite/in/matheus-gondra-a187a81a3"
+    linkedin: "https://www.linkedin.com/mwlite/in/matheus-gondra-a187a81a3",
+    github: "https://github.com/Matheus-Gondra"
 
 };
 const membro2 ={
