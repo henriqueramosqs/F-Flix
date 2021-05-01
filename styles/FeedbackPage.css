@@ -2,6 +2,15 @@ body{
     grid-template-rows: 12rem 1fr 10rem 6fr;
 }
 
+a{
+    color: white;
+    font-size: 3rem;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
 form{
     background: linear-gradient(180deg, rgba(250, 95, 39, 0.0127388) 0.01%, #7E361B 0.02%, rgba(250, 95, 39, 0.012185) 86.98%);
     width: 562px;
@@ -40,7 +49,7 @@ h1{
     margin: 17px auto;
     width: fit-content;
 }
-    
+
 input{
     height: 30px;
     color: rgb(250,250,250,46%);
@@ -104,6 +113,92 @@ button:active{font-size: 18px;padding: 10px;}
     padding: 13px;
     font-weight: bold;
     right:14px
+}
+
+
+@media screen and (max-width: 375px){
+    body{
+        height: 100vh;
+        grid-template-rows: 1fr 1fr 3fr 1fr;
+    }
+
+    nav{
+        width: 90%;
+        margin-left: 22px;
+        height: 60%;
+    }
+
+    h1{
+        font-size: 30px;
+        margin: 35px 33px 17px 33px;
+
+    }
+
+    form{
+        width: 283px;
+        height: 372px;
+    }
+
+    label{
+        margin: 10px 0 10px 30px;
+    }
+
+    input{
+        width: 220px
+    }
+
+    button{
+        margin-left: 32px;
+        width: 220px;
+    }
+
+    .footer{
+        grid-row-start: 4;
+        margin-top: 65px;
+    }
+}
+
+@media screen and (min-width: 376px){
+    body{
+        height: 100vh;
+        grid-template-rows: 1fr 1fr 3fr 1fr;
+    }
+
+    nav{
+        width: 90%;
+        margin-left: 22px;
+        height: 60%;
+    }
+
+    h1{
+        font-size: 30px;
+        margin: 35px 33px 17px 33px;
+
+    }
+
+    form{
+      margin-left: auto;
+        width: 650px;
+        height: 372px;
+    }
+
+    label{
+        margin: 10px 0 10px 30px;
+    }
+
+    input{
+        width: 600px
+    }
+
+    button{
+        margin-left: 32px;
+        width: 220px;
+    }
+
+    .footer{
+        grid-row-start: 4;
+        margin-top: 65px;
+    }
 }
 
 

@@ -1,6 +1,8 @@
 const main = document.querySelector("main");
 const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo");
+const time = document.querySelector(".team");
+
 
 const urlInicial =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
@@ -84,7 +86,7 @@ const createInicialPage = async (url) => {
   clearPage();
 
   const filmes = await getDados(url);
-  console.log(filmes);
+  //console.log(filmes);
 
   let list1 = filmes.slice(0, 10);
   let list2 = filmes.slice(10, 20);
@@ -129,4 +131,10 @@ menu.addEventListener("click", (e) => {
     }
     createPage(url);
   }
+});
+
+//para nosso Squad
+time.addEventListener("click", () => {
+  createCards(filmes);
+  //createInicialPage(urlLocal);
 });
