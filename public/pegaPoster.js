@@ -147,7 +147,7 @@ const membro1 ={
 };
 const membro2 ={
     nome: "Renan Loureiro",
-    linkedin: "https://github.com/renanloureiroo",
+    //linkedin: "https://github.com/renanloureiroo",
     github: "https://github.com/renanloureiroo"
 };
 const membro3 ={
@@ -181,15 +181,17 @@ function participantes(){
     let h2 = document.createElement("h2");
     h2.textContent = membros[i].nome;
     divt.appendChild(h2);
-    let a = document.createElement("a");
-    a.textContent = "Linkedin";
-    a.href=`${membros[i].linkedin}`;
-    divt.appendChild(a);
-    let br = document.createElement("br");
-    divt.appendChild(br);
+    if(membros[i].linkedin){
+      let a = document.createElement("a");
+      a.textContent = "Linkedin";
+      a.href=`${membros[i].linkedin}`;
+      divt.appendChild(a);
+      let br = document.createElement("br");
+      divt.appendChild(br);
+    }
     let a2 = document.createElement("a");
     a2.textContent = "Github";
-    a2.href="public/cartazSquad4.jpg";
+    a2.href=`${membros[i].github}`;
     divt.appendChild(a2);
     div.appendChild(divt);
   }
