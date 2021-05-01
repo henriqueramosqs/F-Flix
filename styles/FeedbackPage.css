@@ -242,6 +242,11 @@ button:active{font-size: 18px;padding: 10px;}
         grid-row-start: 4;
         margin-top: 65px;
     }
+
+    .retorno{
+        width: 330px;
+        margin-top: 30px;
+    }
 }
 
 
