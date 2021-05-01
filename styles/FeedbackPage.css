@@ -107,7 +107,7 @@ button:active{font-size: 18px;padding: 10px;}
 }
 
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 425px){
     body{
         height: 100vh;
         grid-template-rows: 1fr 1fr 3fr 1fr;
