@@ -72,9 +72,9 @@ const pageTrailer = async (id) => {
     const data = document.createElement("p");
     const sinopse = document.createElement("p");
 
-    ti.textContent = title;
-    data.textContent = release_date;
-    sinopse.textContent = overview;
+    ti.textContent = `Título: ${title}`;
+    data.textContent = `Data de lançamento: ${release_date}`;
+    sinopse.textContent = `Sinopse: ${overview}`;
 
     divInfo.appendChild(ti);
     divInfo.appendChild(data);
