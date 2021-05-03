@@ -37,9 +37,9 @@ const getTrailer = (idFilme) => {
 };
 
 const pageTrailer = async (id) => {
-  let section = document.querySelector("section");
-  let divIframe = document.querySelector("div");
-  let divInfo = document.querySelector("div");
+  let section = document.createElement("section");
+  // let divIframe = document.querySelector("div");
+  let divInfo = document.createElement("div");
 
   let urlTrailer = await getTrailer(id);
   clearPage();
@@ -49,10 +49,11 @@ const pageTrailer = async (id) => {
 
   // divIframe.innerHTML = iFrame;
 
-  // section.appendChild(divIframe);
-  // section.appendChild(divInfo);
+  section.innerHTML = iFrame;
+  console.log(section);
+  section.appendChild(divInfo);
 
-  // main.appendChild(section);
+  main.appendChild(section);
 };
 
 const createCard = (filme) => {
