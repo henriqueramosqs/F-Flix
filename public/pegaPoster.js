@@ -40,29 +40,50 @@ const getTrailer = (idFilme) => {
 const getFilme = (idFilme) => {
   const url = `https://api.themoviedb.org/3/movie/${idFilme}?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`;
 
-  const resposta = fetch(url).then((response) => response.json());
+  const res = fetch(url)
+    .then((response) => response.json())
+    .then((response) => {
+      const { title, overview, release_date } = response;
 
-  return resposta;
+      return [title, overview, release_date];
+    });
+
+  return res;
 };
 
 const pageTrailer = async (id) => {
-  let section = document.createElement("section");
-  let divIframe = document.createElement("div");
-  let divInfo = document.createElement("div");
+  const section = document.createElement("section");
+  section.classList.add("trailer-container");
 
-  let urlTrailer = await getTrailer(id);
-  let data = await getFilme(id);
-  console.log(data);
+  const divIframe = document.createElement("div");
+  divIframe.classList.add("iframe-container");
+
+  const divInfo = document.createElement("div");
+  divInfo.classList.add("info-container");
+
+  const urlTrailer = await getTrailer(id);
+  const [title, overview, release_date] = await getFilme(id);
+  console.log(title);
 
   if (urlTrailer) {
     clearPage();
 
-    let iFrame = createIframe(urlTrailer);
-    console.log(iFrame);
+    const ti = document.createElement("h3");
+    const data = document.createElement("p");
+    const sinopse = document.createElement("p");
+
+    ti.textContent = title;
+    data.textContent = release_date;
+    sinopse.textContent = overview;
+
+    divInfo.appendChild(ti);
+    divInfo.appendChild(data);
+    divInfo.appendChild(sinopse);
+
+    const iFrame = createIframe(urlTrailer);
 
     divIframe.innerHTML = iFrame;
 
-    console.log(section);
     section.appendChild(divIframe);
     section.appendChild(divInfo);
 
