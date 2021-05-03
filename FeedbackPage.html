@@ -65,18 +65,18 @@
             retorno = document.createElement('div');
             retorno.setAttribute("class", 'retorno');
 
-            a1 = document.createElement("a");
-            a1.setAttribute("class", "msg_de_retorno");
-            a2 = document.createElement("a");
-            a2.setAttribute("class", "msg_de_retorno");
+            a = document.createElement("a");
+            a.setAttribute("class", "msg_de_retorno");
+            a.setAttribute("href", "LandingPage.html");
+
             botao = document.createElement("button");
             botao.innerText = 'Voltar para o início'
             botao.setAttribute("id", "voltar");
-
+            
             document.body.insertBefore(retorno, document.querySelector('.footer'))
-            retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
-
-            retorno.appendChild(botao)
+            retorno.innerHTML = "<p id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</p>"
+            a.appendChild(botao);
+            retorno.appendChild(a)
 
             //anexa o retorno ao corpo do documento
             document.body.appendChild(retorno)
