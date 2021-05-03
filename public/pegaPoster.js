@@ -3,8 +3,6 @@ const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo");
 const time = document.querySelector(".team");
 
-
-
 const urlInicial =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
 
@@ -105,10 +103,28 @@ const getDados = async (url) => {
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
+      console.log(results);
       return results;
     })
     .catch((e) => console.log(e));
 };
+
+const getTrailer = (idFilme) => {
+  const url = `https://api.themoviedb.org/3/movie/${idFilme}/videos?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`;
+  const resposta = fetch(url)
+    .then((response) => response.json())
+    .then((response) => {
+      let { results } = response;
+      results = results[0].key;
+      return results;
+    })
+    .then((key) => {
+      return key ? `https://www.youtube.com/embed/${key}` : "Sem trailer";
+    });
+  return resposta;
+};
+
+getTrailer(460465).then(console.log);
 
 window.addEventListener("load", () => {
   createInicialPage(urlInicial);
@@ -139,69 +155,64 @@ menu.addEventListener("click", (e) => {
 });
 
 //pro squad
-const membro1 ={
-    nome: "Matheus de Gondra",
-    linkedin: "https://www.linkedin.com/mwlite/in/matheus-gondra-a187a81a3",
-    github: "https://github.com/Matheus-Gondra"
+const membro1 = {
+  nome: "Matheus de Gondra",
+  linkedin: "https://www.linkedin.com/mwlite/in/matheus-gondra-a187a81a3",
+  github: "https://github.com/Matheus-Gondra",
+};
+const membro2 = {
+  nome: "Renan Loureiro",
+  //linkedin: "https://github.com/renanloureiroo",
+  github: "https://github.com/renanloureiroo",
+};
+const membro3 = {
+  nome: "Henrique Ramos",
+  linkedin: "https://www.linkedin.com/in/henrique-ramos-02b4151b0",
+  github: "https://github.com/henriqueramosqs",
+};
+const membro4 = {
+  nome: "Gabriel Pires",
+  linkedin: "https://www.linkedin.com/in/gabriel-r-pires/",
+  github: "https://github.com/DevGabrielPires",
+};
+const membro5 = {
+  nome: "Renan Tomazini",
+  linkedin: "https://www.linkedin.com/in/renan-tomazini-b9a75263/",
+  github: "https://github.com/rtomazini42",
+};
 
-};
-const membro2 ={
-    nome: "Renan Loureiro",
-    //linkedin: "https://github.com/renanloureiroo",
-    github: "https://github.com/renanloureiroo"
-};
-const membro3 ={
-    nome: "Henrique Ramos",
-    linkedin: "https://www.linkedin.com/in/henrique-ramos-02b4151b0",
-    github: "https://github.com/henriqueramosqs"
-};
-const membro4 ={
-    nome: "Gabriel Pires",
-    linkedin: "https://www.linkedin.com/in/gabriel-r-pires/",
-    github: "https://github.com/DevGabrielPires"
-};
-const membro5 ={
-    nome: "Renan Tomazini",
-    linkedin: "https://www.linkedin.com/in/renan-tomazini-b9a75263/",
-    github: "https://github.com/rtomazini42"
-};
+const membros = [membro1, membro2, membro3, membro4, membro5];
 
-const membros = [membro1,membro2,membro3,membro4,membro5];
-
-function participantes(){
+function participantes() {
   //let section = document.createElement("section");
   let div = document.createElement("div");
   div.classList.add("participantescontainer");
   let h1 = document.createElement("h1");
-  h1.textContent = "O Squad:"
+  h1.textContent = "O Squad:";
   div.appendChild(h1);
-  for (var i in membros){
+  for (var i in membros) {
     let divt = document.createElement("div");
     divt.classList.add("membro");
     let h2 = document.createElement("h2");
     h2.textContent = membros[i].nome;
     divt.appendChild(h2);
-    if(membros[i].linkedin){
+    if (membros[i].linkedin) {
       let a = document.createElement("a");
       a.textContent = "Linkedin";
-      a.href=`${membros[i].linkedin}`;
+      a.href = `${membros[i].linkedin}`;
       divt.appendChild(a);
       let br = document.createElement("br");
       divt.appendChild(br);
     }
     let a2 = document.createElement("a");
     a2.textContent = "Github";
-    a2.href=`${membros[i].github}`;
+    a2.href = `${membros[i].github}`;
     divt.appendChild(a2);
     div.appendChild(divt);
   }
   //section.appendChild(div);
   main.appendChild(div);
-
-
-
 }
-
 
 time.addEventListener("click", (e) => {
   clearPage();
@@ -211,7 +222,7 @@ time.addEventListener("click", (e) => {
   //div.classList.add("s-container");
   let filme = [1, "Squad 4", "nope.jpg", "5 pessoas, uma hackton."];
   let card = createCard(filme);
-  image = card.querySelector('img').src="public/cartazSquad4.jpg";
+  image = card.querySelector("img").src = "public/cartazSquad4.jpg";
   //card.querySelector('.poster').classList.add("nossoCartaz");
   //card.querySelector('.poster').classList.remove("poster");
   //console.log(image);
@@ -219,5 +230,4 @@ time.addEventListener("click", (e) => {
   //section.appendChild(div);
   main.appendChild(div);
   participantes();
-
 });
