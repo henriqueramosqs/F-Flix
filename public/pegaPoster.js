@@ -15,33 +15,60 @@ const urlAnimes =
 const urlSeries =
   "https://api.themoviedb.org/3/tv/popular?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
 
+const createIframe = (urlTrailer) => {
+  const iframe = `<iframe width="560" height="315" src="${urlTrailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+  return iframe;
+};
+
+const getTrailer = (idFilme) => {
+  const url = `https://api.themoviedb.org/3/movie/${idFilme}/videos?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`;
+  const resposta = fetch(url)
+    .then((response) => response.json())
+    .then((response) => {
+      let { results } = response;
+      results = results[0].key;
+      return results;
+    })
+    .then((key) => {
+      return key ? `https://www.youtube.com/embed/${key}` : null;
+    });
+  return resposta;
+};
+
+const pageTrailer = async (id) => {
+  let section = document.querySelector("section");
+  let divIframe = document.querySelector("div");
+  let divInfo = document.querySelector("div");
+
+  let urlTrailer = await getTrailer(id);
+  clearPage();
+
+  let iFrame = createIframe(urlTrailer);
+  console.log(iFrame);
+
+  // divIframe.innerHTML = iFrame;
+
+  // section.appendChild(divIframe);
+  // section.appendChild(divInfo);
+
+  // main.appendChild(section);
+};
+
 const createCard = (filme) => {
-  //console.log(filme);
   let card = document.createElement("div");
   card.classList.add("video");
   card.id = filme[0];
 
-  let info = document.createElement("div");
-  info.classList.add("info-hidden");
-  let title = document.createElement("h1");
-  let sinopse = document.createElement("p");
-
-  sinopse.textContent = filme[3];
-  title.textContent = filme[1];
-
-  info.appendChild(title);
-  info.appendChild(sinopse);
-
   let divPoster = document.createElement("div");
   divPoster.classList.add("poster");
-  const url = `https://image.tmdb.org/t/p/w500/${filme[2]}`;
+  const url = `https://image.tmdb.org/t/p/w500/${filme[1]}`;
   let poster = document.createElement("img");
   poster.src = url;
 
   divPoster.appendChild(poster);
 
   card.appendChild(divPoster);
-  card.appendChild(info);
 
   return card;
 };
@@ -61,8 +88,8 @@ const createCards = (array, titulo) => {
   div.classList.add("movie-container");
 
   array.forEach((obj) => {
-    const { id, title, poster_path, overview } = obj;
-    let filme = [id, title, poster_path, overview];
+    const { id, poster_path } = obj;
+    let filme = [id, poster_path];
     let card = createCard(filme);
 
     div.appendChild(card);
@@ -71,6 +98,17 @@ const createCards = (array, titulo) => {
   section.appendChild(div);
 
   main.appendChild(section);
+
+  const filmes = div.childNodes;
+
+  filmes.forEach((filme) => {
+    filme.addEventListener("click", (e) => {
+      let movieId = e.target;
+      movieId = movieId.parentNode.parentNode.id;
+      console.log(movieId);
+      pageTrailer(movieId);
+    });
+  });
 };
 
 const clearPage = () => {
@@ -90,7 +128,6 @@ const createInicialPage = async (url) => {
   clearPage();
 
   const filmes = await getDados(url);
-  //console.log(filmes);
   let list1 = filmes.slice(0, 10);
   let list2 = filmes.slice(10, 20);
 
@@ -103,28 +140,10 @@ const getDados = async (url) => {
     .then((response) => response.json())
     .then((response) => {
       const { results } = response;
-      console.log(results);
       return results;
     })
     .catch((e) => console.log(e));
 };
-
-const getTrailer = (idFilme) => {
-  const url = `https://api.themoviedb.org/3/movie/${idFilme}/videos?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`;
-  const resposta = fetch(url)
-    .then((response) => response.json())
-    .then((response) => {
-      let { results } = response;
-      results = results[0].key;
-      return results;
-    })
-    .then((key) => {
-      return key ? `https://www.youtube.com/embed/${key}` : "Sem trailer";
-    });
-  return resposta;
-};
-
-getTrailer(460465).then(console.log);
 
 window.addEventListener("load", () => {
   createInicialPage(urlInicial);
