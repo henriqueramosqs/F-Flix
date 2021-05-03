@@ -46,7 +46,7 @@
 
         <label for="mensage">Mensagem</label>
         <input id="mensage" type="text" id="mensage" required>
-        <button type="button" id="enviar" onclick="sendEmail()">Enviar</button>
+        <button type="button" id="enviar" onclick="verificarInput()">Enviar</button>
     </form>
     <div class="footer">
         <img src="public/icon.png" alt="Logotipo da F Flix">
@@ -56,6 +56,7 @@
     </div>
     <script type="text/javascript">
         function sendEmail() {
+            
             //esconde o form
             form = document.querySelector("form");
             form.setAttribute("class", "hidden");
@@ -83,6 +84,17 @@
 
         }
         
+        function verificarInput(){
+            inputNome = document.querySelector("#name");
+            inputEmail = document.querySelector("#email");
+            inputMensage = document.querySelector("#mensage");
+
+            if(inputNome.value == "" || inputEmail.value == "" || inputMensage.value == ""){
+                alert("Por favor preencha todos os campos do formulario");
+            }else{
+                sendEmail();
+            }
+        }
 
 
 
