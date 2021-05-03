@@ -219,3 +219,8 @@ footer {
 .participantescontainer img {
   float: right;
 }
+iframe {
+  min-width: 850px;
+  min-height: 500px;
+  width: 100%;
+}

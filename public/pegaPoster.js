@@ -16,7 +16,7 @@ const urlSeries =
   "https://api.themoviedb.org/3/tv/popular?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
 
 const createIframe = (urlTrailer) => {
-  const iframe = `<iframe width="560" height="315" src="${urlTrailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  const iframe = `<iframe src="${urlTrailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
   return iframe;
 };
@@ -27,7 +27,8 @@ const getTrailer = (idFilme) => {
     .then((response) => response.json())
     .then((response) => {
       let { results } = response;
-      results = results[0].key;
+
+      results = results ? results[0].key : null;
       return results;
     })
     .then((key) => {
@@ -36,24 +37,37 @@ const getTrailer = (idFilme) => {
   return resposta;
 };
 
+const getFilme = (idFilme) => {
+  const url = `https://api.themoviedb.org/3/movie/${idFilme}?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`;
+
+  const resposta = fetch(url).then((response) => response.json());
+
+  return resposta;
+};
+
 const pageTrailer = async (id) => {
   let section = document.createElement("section");
-  // let divIframe = document.querySelector("div");
+  let divIframe = document.createElement("div");
   let divInfo = document.createElement("div");
 
   let urlTrailer = await getTrailer(id);
-  clearPage();
+  let data = await getFilme(id);
+  console.log(data);
 
-  let iFrame = createIframe(urlTrailer);
-  console.log(iFrame);
+  if (urlTrailer) {
+    clearPage();
 
-  // divIframe.innerHTML = iFrame;
+    let iFrame = createIframe(urlTrailer);
+    console.log(iFrame);
 
-  section.innerHTML = iFrame;
-  console.log(section);
-  section.appendChild(divInfo);
+    divIframe.innerHTML = iFrame;
 
-  main.appendChild(section);
+    console.log(section);
+    section.appendChild(divIframe);
+    section.appendChild(divInfo);
+
+    main.appendChild(section);
+  }
 };
 
 const createCard = (filme) => {
