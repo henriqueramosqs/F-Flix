@@ -240,6 +240,8 @@ footer {
 .nossocontainer img {
   float: left;
   width: 50%;
+  position: relative;
+  top:50px
 }
 
 .participantescontainer h1 {
