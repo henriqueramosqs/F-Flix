@@ -63,7 +63,6 @@ const pageTrailer = async (id) => {
 
   const urlTrailer = await getTrailer(id);
   const [title, overview, release_date] = await getFilme(id);
-  console.log(title);
 
   if (urlTrailer) {
     clearPage();
@@ -137,11 +136,11 @@ const createCards = (array, titulo) => {
 
   const filmes = div.childNodes;
 
+  // escutando evento para cara card, para dar get no trailer pegando o id do click
   filmes.forEach((filme) => {
     filme.addEventListener("click", (e) => {
       let movieId = e.target;
       movieId = movieId.parentNode.parentNode.id;
-      console.log(movieId);
       pageTrailer(movieId);
     });
   });
@@ -154,8 +153,6 @@ const clearPage = () => {
 const createPage = async (url) => {
   clearPage();
   const filmes = await getDados(url);
-
-  console.log(filmes);
   createCards(filmes);
 };
 
@@ -179,6 +176,11 @@ const getDados = async (url) => {
       return results;
     })
     .catch((e) => console.log(e));
+};
+
+const random = (min, max) => {
+  const num = Math.round(Math.random() * (max - min)) + min;
+  return num;
 };
 
 window.addEventListener("load", () => {
