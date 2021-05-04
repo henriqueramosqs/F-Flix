@@ -115,7 +115,7 @@ const createCards = (array, titulo) => {
   //console.log(titulo);
   let section = document.createElement("section");
   if (titulo) {
-    let h1 = document.createElement("h1");
+    let h1 = document.createElement("h2");
     h1.textContent = titulo;
     section.appendChild(h1);
   }
