@@ -160,13 +160,17 @@ const createPage = async (url) => {
 // Pagina inicial tem uma funcao propria, pq o array é dividido nela
 const createInicialPage = async (url) => {
   clearPage();
+  try {
+    const filmes = await getDados(url);
+    let list1 = filmes.slice(0, 10);
+    let list2 = filmes.slice(10, 20);
 
-  const filmes = await getDados(url);
-  let list1 = filmes.slice(0, 10);
-  let list2 = filmes.slice(10, 20);
-
-  createCards(list1, "Em alta");
-  createCards(list2, "Populares");
+    createCards(list1, "Em alta");
+    createCards(list2, "Populares");
+  } catch (e) {
+    const h1 = document.createElement(h2);
+    h1.textContent = e.sta;
+  }
 };
 
 const getDados = async (url) => {
