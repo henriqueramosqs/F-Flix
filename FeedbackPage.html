@@ -57,35 +57,6 @@
         <a class="team">© 2021, squad-4</a>
     </div>
     <script type="text/javascript">
-        function sendEmail() {
-            
-            //esconde o form
-            form = document.querySelector("form");
-            form.setAttribute("class", "hidden");
-            h1 = document.querySelector("h1").setAttribute("class", "hidden")
-
-            //cria caixa de retorno e os elementos componentes
-            retorno = document.createElement('div');
-            retorno.setAttribute("class", 'retorno');
-
-            a = document.createElement("a");
-            a.setAttribute("class", "msg_de_retorno");
-            a.setAttribute("href", "LandingPage.html");
-
-            botao = document.createElement("button");
-            botao.innerText = 'Voltar para o início'
-            botao.setAttribute("id", "voltar");
-            
-            document.body.insertBefore(retorno, document.querySelector('.footer'))
-            retorno.innerHTML = "<p id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</p>"
-            a.appendChild(botao);
-            retorno.appendChild(a)
-
-            //anexa o retorno ao corpo do documento
-            document.body.appendChild(retorno)
-
-        }
-        
         function verificarInput(){
             inputNome = document.querySelector("#name");
             inputEmail = document.querySelector("#email");
@@ -98,7 +69,57 @@
             }
         }
 
+    function sendEmail(){
+                //esconde o form
+                form = document.querySelector("form");
+                form.setAttribute("class","hidden");
+                h1= document.querySelector("h1").setAttribute("class","hidden")
+                //cria caixa de retorno e os elementos componentes
+                retorno = document.createElement('div');
+                retorno.setAttribute("class", 'retorno');
+                a1 =document.createElement("a");
+                a1.setAttribute("class","msg_de_retorno");
+                a2 = document.createElement("a");
+                a2.setAttribute("class","msg_de_retorno");     
+                botao = document.createElement("button");    
+                botao.innerText ='Voltar para o início'        
+                botao.setAttribute("id","voltar");   
 
+                document.body.appendChild(retorno)
+                document.body.insertBefore(retorno , document.querySelector('.footer'))
+                retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
+
+
+                retorno.appendChild(botao)
+
+                //anexa o retorno ao corpo do documento
+            
+                var params ={
+                    from_name:document.getElementById("name").value,
+                    message: document.getElementById("mensage").value,
+                    from_email: document.getElementById("email").value
+                }
+                console.log(params)
+                emailjs.send("service_on0i63i",'template_dgtq4xi',params).then((res)=> {
+
+                    if(res.status ==200){
+                        var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição &#x1F609;"]
+                        var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição 😉"]
+                    }else{
+                        var textnode1 = "Oops! Eroor:" +res.status
+                        var textnodes =[textnode1,"Por favor, tente novamente"]
+                        var envioFalho = true
+                    }    
+                    
+                document.getElementById('carregando').remove()
+                //anexa os elementos internos ao box de retorno
+                retorno.appendChild(a1)
+                retorno.appendChild(a2)   
+                a1.innerText=textnodes[0]
+                a2.innerText=textnodes[1]
+                })
+            }
+            
 
     </script>
 </body>
