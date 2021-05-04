@@ -1,113 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>F Flix</title>
-        <script src="/path/to/jquery.min.js"></script>        
-        <link  rel="icon"  href="public/icon.png">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles/LandingPage.css">
-        <link rel="stylesheet" href="./styles/FeedbackPage.css">
-        <link rel="stylesheet" href="public\sendEmail.js">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-        <script type="text/javascript">
-        (function() {
-        emailjs.init("user_Qg6qVekQv0T71NLSg91oZ");
+
+<head>
+    <title>F Flix</title>
+    <script src="/path/to/jquery.min.js"></script>
+    <link rel="icon" href="public/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/LandingPage.css">
+    <link rel="stylesheet" href="./styles/FeedbackPage.css">
+    <link rel="stylesheet" href="public\sendEmail.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_Qg6qVekQv0T71NLSg91oZ");
         })();
-        </script>
-        <link rel="preconnect" href="https://fonts.gstatic.com">    
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-        <style>
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
 
-          </style>
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <img src="public/logotipo.svg" alt="Logotipo da F Flix">
-            </div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="LandingPage.html" class ="video_category">Início</a></li>
-                    <li><a class ="video_category">Filmes</a></li>
-                    <li><a class ="video_category">Séries</a></li>
-                    <li><a class ="video_category">Animes</a></li>
-                </ul>
+    </style>
+</head>
 
-            </nav>
-        </header>
-
-           <h1>Sua opinião é muito importante para nós</h1>
-            <form  method="post" enctype="text/plain">
-                <label id="nome" for="name">Nome</label>
-                <input type="text" id="name" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-                
-                <label  for="mensage">Mensagem</label>
-                <input id="mensage" type="text" id="mensage" required>
-                <button type="button" id="enviar" onclick="sendEmail()">Enviar</button>
-            </form>
-        <div class="footer">
-            <img src="public/icon.png" alt="Logotipo da F Flix">
-                <a href="FeedbackPage.html">Enviar feedback</a>
-                <a>Ajuda</a>
-                <a>2021, squad-4</a>
+<body>
+    <header>
+        <div class="logo">
+            <img src="public/logotipo.svg" alt="Logotipo da F Flix">
         </div>
-        <script type="text/javascript">
-        function sendEmail(){
+        <nav>
+            <ul class="menu">
+                <li><a href="LandingPage.html" class="video_category">Voltar</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <h1>Sua opinião é muito importante para nós</h1>
+    <form method="post" enctype="text/plain">
+        <label id="nome" for="name">Nome</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="mensage">Mensagem</label>
+        <input id="mensage" type="text" id="mensage" required>
+        <button type="button" id="enviar" onclick="verificarInput()">Enviar</button>
+    </form>
+    <div class="footer">
+        <img src="public/icon.png" alt="Logotipo da F Flix">
+        <a href="FeedbackPage.html">Enviar feedback</a>
+        <a>Ajuda</a>
+        <a class="team">© 2021, squad-4</a>
+    </div>
+    <script type="text/javascript">
+        function sendEmail() {
+            
             //esconde o form
             form = document.querySelector("form");
-            form.setAttribute("class","hidden");
-            h1= document.querySelector("h1").setAttribute("class","hidden")
+            form.setAttribute("class", "hidden");
+            h1 = document.querySelector("h1").setAttribute("class", "hidden")
 
             //cria caixa de retorno e os elementos componentes
             retorno = document.createElement('div');
             retorno.setAttribute("class", 'retorno');
 
-            a1 =document.createElement("a");
-            a1.setAttribute("class","msg_de_retorno");
-            a2 = document.createElement("a");
-            a2.setAttribute("class","msg_de_retorno");     
-            botao = document.createElement("button");    
-            botao.innerText ='Voltar para o início'        
-            botao.setAttribute("id","voltar");   
+            a = document.createElement("a");
+            a.setAttribute("class", "msg_de_retorno");
+            a.setAttribute("href", "LandingPage.html");
 
-            document.body.insertBefore(retorno , document.querySelector('.footer'))
-            retorno.innerHTML = "<a id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</a>"
-
-            retorno.appendChild(botao)
+            botao = document.createElement("button");
+            botao.innerText = 'Voltar para o início'
+            botao.setAttribute("id", "voltar");
+            
+            document.body.insertBefore(retorno, document.querySelector('.footer'))
+            retorno.innerHTML = "<p id =\'carregando\'class=\'msg_de_retorno\'>Aguarde, seu feedback está sendo enviado...</p>"
+            a.appendChild(botao);
+            retorno.appendChild(a)
 
             //anexa o retorno ao corpo do documento
-           
-            var params ={
-                from_name:document.getElementById("name").value,
-                message: document.getElementById("mensage").value,
-                from_email: document.getElementById("email").value
+            document.body.appendChild(retorno)
+
+        }
+        
+        function verificarInput(){
+            inputNome = document.querySelector("#name");
+            inputEmail = document.querySelector("#email");
+            inputMensage = document.querySelector("#mensage");
+
+            if(inputNome.value == "" || inputEmail.value == "" || inputMensage.value == ""){
+                alert("Por favor preencha todos os campos do formulario");
+            }else{
+                sendEmail();
             }
-            console.log(params)
-            emailjs.send("service_on0i63i",'template_dgtq4xi',params).then((res)=> {
-              
-                if(res.status ==200){
-                     var textnodes =["Seu feedback foi enviado com suceso","Agradecemos a disposição 😉"]
-                }else{
-                    var textnode1 = "Oops! Eroor:" +res.status
-                    var textnodes =[textnode1,"Por favor, tente novamente"]
-                    var envioFalho = true
-                }    
-                
-            document.getElementById('carregando').remove()
-            //anexa os elementos internos ao box de retorno
-            retorno.appendChild(a1)
-            retorno.appendChild(a2)   
-            a1.innerText=textnodes[0]
-            a2.innerText=textnodes[1]
-            })
         }
 
-        
 
-         </script>
-        </body>
+
+    </script>
+</body>
+
 </html>
