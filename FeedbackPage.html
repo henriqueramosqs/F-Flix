@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/FeedbackPage.css">
     <link rel="stylesheet" href="public\sendEmail.js">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="public/@2021squad.js" defer></script>
     <script type="text/javascript">
         (function () {
             emailjs.init("user_Qg6qVekQv0T71NLSg91oZ");
@@ -35,7 +36,7 @@
 
         </nav>
     </header>
-
+    <main>
     <h1>Sua opinião é muito importante para nós</h1>
     <form method="post" enctype="text/plain">
         <label id="nome" for="name">Nome</label>
@@ -48,6 +49,7 @@
         <input id="mensage" type="text" id="mensage" required>
         <button type="button" id="enviar" onclick="verificarInput()">Enviar</button>
     </form>
+    </main>
     <div class="footer">
         <img src="public/icon.png" alt="Logotipo da F Flix">
         <a href="FeedbackPage.html">Enviar feedback</a>
