@@ -203,6 +203,9 @@ const randomFilme = async () => {
     randomFilme();
   }
 };
+aleatorio.addEventListener("click", () => {
+  randomFilme();
+});
 
 window.addEventListener("load", () => {
   createInicialPage(urlInicial);
