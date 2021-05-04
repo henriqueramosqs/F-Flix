@@ -127,8 +127,31 @@ footer {
   header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
+
+  .btn-random {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-random > button {
+    padding: 20px;
+    font-size: 24px;
+    line-height: 24px;
+    color: white;
+    background: #fb4300;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 400ms ease;
+    margin: 0.5rem;
+  }
+
   .logo {
     display: flex;
     justify-content: center;
@@ -241,7 +264,7 @@ footer {
   float: left;
   width: 50%;
   position: relative;
-  top:50px
+  top: 50px;
 }
 
 .participantescontainer h1 {
@@ -271,7 +294,7 @@ footer {
   float: right;
   position: relative;
 }
-.participantescontainer  {
+.participantescontainer {
   display: grid;
   padding-left: 30px;
 }

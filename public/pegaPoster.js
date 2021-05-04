@@ -2,6 +2,7 @@ const main = document.querySelector("main");
 const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo");
 const time = document.querySelector(".team");
+const aleatorio = document.querySelector("#random");
 
 const urlInicial =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
@@ -181,6 +182,26 @@ const getDados = async (url) => {
 const random = (min, max) => {
   const num = Math.round(Math.random() * (max - min)) + min;
   return num;
+};
+
+// Função escolhe aleatoriamente, algo dentro do catalago da aplicação, algo para ser assistido
+const randomFilme = async () => {
+  try {
+    const indiceUrl = random(0, 3);
+    const indiceResultado = random(0, 19);
+
+    const url = [urlInicial, urlFilmes, urlSeries, urlAnimes];
+
+    const filmeEscolhido = await getDados(url[indiceUrl]).then(
+      (resultado) => resultado[indiceResultado]
+    );
+    const { id } = filmeEscolhido;
+
+    pageTrailer(id);
+  } catch {
+    console.log("erro");
+    randomFilme();
+  }
 };
 
 window.addEventListener("load", () => {
