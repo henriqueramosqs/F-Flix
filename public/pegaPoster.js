@@ -10,31 +10,41 @@ const urlInicial =
 const urlFilmes =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=2";
 
-const urlAnimes =
-  "https://api.themoviedb.org/3/tv/top_rated?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
-
-const urlSeries =
-  "https://api.themoviedb.org/3/tv/popular?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
-
 const createIframe = (urlTrailer) => {
   const iframe = `<iframe src="${urlTrailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
   return iframe;
 };
 
+const verifTrailer = async (id) => {
+  const respost = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/videos?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`
+  ).then(async (r) => {
+    let t = await getTrailer(id);
+    if (r.ok && t !== false) {
+      return true;
+    }
+  });
+  return respost;
+};
+
 const getTrailer = (idFilme) => {
   const url = `https://api.themoviedb.org/3/movie/${idFilme}/videos?api_key=6ac040cdb08ce2085e436dba651a25aa&language=en-US`;
   const resposta = fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
     .then((response) => {
       let { results } = response;
-
-      results = results ? results[0].key : null;
-      return results;
+      return results[0];
     })
-    .then((key) => {
-      return key ? `https://www.youtube.com/embed/${key}` : null;
-    });
+    .then((results) => {
+      const { key } = results;
+      return key ? `https://www.youtube.com/embed/${key}` : false;
+    })
+    .catch((e) => console.log(e.message));
   return resposta;
 };
 
@@ -63,6 +73,7 @@ const pageTrailer = async (id) => {
   divInfo.classList.add("info-container");
 
   const urlTrailer = await getTrailer(id);
+  console.log(urlTrailer);
   const [title, overview, release_date] = await getFilme(id);
 
   if (urlTrailer) {
@@ -125,26 +136,24 @@ const createCards = (array, titulo) => {
 
   array.forEach((obj) => {
     const { id, poster_path } = obj;
-    let filme = [id, poster_path];
-    let card = createCard(filme);
-
-    div.appendChild(card);
+    verifTrailer(id).then((res) => {
+      if (res) {
+        let filme = [id, poster_path];
+        let card = createCard(filme);
+        card.addEventListener("click", (e) => {
+          let movieId = e.target;
+          console.log(movieId);
+          movieId = movieId.parentNode.parentNode.id;
+          pageTrailer(movieId);
+        });
+        div.appendChild(card);
+      }
+    });
   });
 
   section.appendChild(div);
 
   main.appendChild(section);
-
-  const filmes = div.childNodes;
-
-  // escutando evento para cara card, para dar get no trailer pegando o id do click
-  filmes.forEach((filme) => {
-    filme.addEventListener("click", (e) => {
-      let movieId = e.target;
-      movieId = movieId.parentNode.parentNode.id;
-      pageTrailer(movieId);
-    });
-  });
 };
 
 const clearPage = () => {
@@ -230,10 +239,6 @@ menu.addEventListener("click", (e) => {
   } else {
     if (categoria === "filmes") {
       url = urlFilmes;
-    } else if (categoria === "series") {
-      url = urlSeries;
-    } else if (categoria === "animes") {
-      url = urlAnimes;
     }
     createPage(url);
   }
