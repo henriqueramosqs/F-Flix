@@ -251,49 +251,48 @@ button:active{font-size: 18px;padding: 10px;}
 
 
 /* para squad */
-.nosso-container{
+
+.nossocontainer{
   width: auto;
+  font-size: 1.8rem;
 }
 
-/*para squad*/
-
 .nossocontainer img {
-    float: left;
-    width: 50%;
-    position: relative;
-    top:90px
-  }
-  
-  .participantescontainer h1 {
-    margin-bottom: 5px;
-    color: white;
-    font-size: 2.5em;
-    margin-left:0px;
-  }
-  
-  .participantescontainer a {
-    margin: 50px;
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-  }
-  .participantescontainer a:hover {
-    color: orange;
-    text-decoration: none;
-  }
-  
-  .membro {
-    margin-top: 10px;
-    color: rgb(126, 54, 27);
-    font-size: 1.2em;
-  }
-  
-  .participantescontainer img {
-    float: right;
-    position: relative;
-  }
-  .participantescontainer  {
-    display: grid;
-    padding-left: 30px;
-  }
-   
+
+  width: 130%;
+  /*position: relative;*/
+  top: 50px;
+}
+
+.participantescontainer h1 {
+  margin-bottom: 5px;
+  color: white;
+  font-size: 2.5em;
+}
+
+.participantescontainer a {
+  margin: 50px;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+.participantescontainer a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.membro {
+  margin-top: 10px;
+  color: rgb(126, 54, 27);
+  font-size: 1.2em;
+}
+
+.participantescontainer img {
+
+  position: relative;
+}
+.participantescontainer {
+  display: grid;
+  padding-left: 30px;
+  font-size: 2.5em;
+}

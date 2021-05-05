@@ -306,10 +306,14 @@ footer {
 
 /*para squad*/
 
+.nossocontainer{
+  width: auto;
+  font-size: 1.8rem;
+}
+
 .nossocontainer img {
-  float: left;
-  width: 50%;
-  position: relative;
+  width: 130%;
+  /*position: relative;*/
   top: 50px;
 }
 
