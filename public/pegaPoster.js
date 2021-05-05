@@ -200,10 +200,10 @@ const random = (min, max) => {
 // Função escolhe aleatoriamente, algo dentro do catalago da aplicação, algo para ser assistido
 const randomFilme = async () => {
   try {
-    const indiceUrl = random(0, 3);
+    const indiceUrl = random(0, 1);
     const indiceResultado = random(0, 19);
 
-    const url = [urlInicial, urlFilmes, urlSeries, urlAnimes];
+    const url = [urlInicial, urlFilmes];
 
     const filmeEscolhido = await getDados(url[indiceUrl]).then(
       (resultado) => resultado[indiceResultado]
