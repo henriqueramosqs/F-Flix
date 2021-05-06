@@ -250,49 +250,11 @@ button:active{font-size: 18px;padding: 10px;}
 }
 
 
-/* para squad */
-
-.nossocontainer{
-  width: auto;
-  font-size: 1.8rem;
+.nossocontainer img{
+  width: 10%;
 }
 
-.nossocontainer img {
-
-  width: 130%;
-  /*position: relative;*/
-  top: 50px;
-}
-
-.participantescontainer h1 {
-  margin-bottom: 5px;
-  color: white;
-  font-size: 2.5em;
-}
-
-.participantescontainer a {
-  margin: 50px;
-  color: white;
-  text-decoration: none;
-  font-size: 1em;
-}
-.participantescontainer a:hover {
-  color: orange;
-  text-decoration: none;
-}
-
-.membro {
-  margin-top: 10px;
-  color: rgb(126, 54, 27);
-  font-size: 1.2em;
-}
-
-.participantescontainer img {
-
-  position: relative;
-}
-.participantescontainer {
-  display: grid;
-  padding-left: 30px;
-  font-size: 2.5em;
+.nossocontainer poster{
+  margin: 0;
+  padding: 0;
 }
