@@ -36,6 +36,7 @@ header {
 nav {
   height: 100%;
   grid-column: 1/3;
+  margin-bottom: 1rem;
 }
 .btn-random {
   display: flex;
@@ -45,7 +46,7 @@ nav {
 }
 
 .btn-random > button {
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 2rem;
   color: #fb4300;
   background: #fffafa;
@@ -91,7 +92,7 @@ nav {
 .movie-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(4, minmax(100px, 400px));
+  grid-template-columns: repeat(3, minmax(100px, 400px));
   padding: 1rem;
 }
 
@@ -285,7 +286,7 @@ footer {
     height: 100%;
   }
 
-  .trailer-container {
+  section.trailer-container {
     width: 100%;
     padding: 1rem;
     display: flex;
