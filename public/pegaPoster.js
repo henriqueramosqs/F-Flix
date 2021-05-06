@@ -125,8 +125,8 @@ const createCard = (filme) => {
 // Só a section da pagina inicial recebe titulo
 const createCards = (array, titulo) => {
   let section = document.createElement("section");
+
   let div = document.createElement("div");
-  div.classList.add("movie-container");
 
   if (titulo) {
     let h2 = document.createElement("h2");
@@ -143,12 +143,12 @@ const createCards = (array, titulo) => {
       let marginEmAlta = titulo === "Em alta";
       if (marginEmAlta) {
         if (marginLAlta * -1 < 900) {
-          marginLAlta = marginLAlta - 200;
+          marginLAlta = marginLAlta - 400;
           div.style.marginLeft = `${marginLAlta}px`;
         }
       } else {
         if (marginLPopulares * -1 < 900) {
-          marginLPopulares = marginLPopulares - 200;
+          marginLPopulares = marginLPopulares - 400;
           div.style.marginLeft = `${marginLPopulares}px`;
         }
       }
@@ -157,13 +157,13 @@ const createCards = (array, titulo) => {
     btnL.addEventListener("click", () => {
       let marginEmAlta = titulo === "Em alta";
       if (marginEmAlta) {
-        if (marginLAlta * -1 >= 200) {
-          marginLAlta = marginLAlta + 200;
+        if (marginLAlta * -1 >= 400) {
+          marginLAlta = marginLAlta + 400;
           div.style.marginLeft = `${marginLAlta}px`;
         }
       } else {
-        if (marginLPopulares * -1 >= 200) {
-          marginLPopulares = marginLPopulares + 200;
+        if (marginLPopulares * -1 >= 400) {
+          marginLPopulares = marginLPopulares + 400;
           div.style.marginLeft = `${marginLPopulares}px`;
         }
       }
@@ -171,6 +171,15 @@ const createCards = (array, titulo) => {
 
     section.appendChild(btnL);
     section.appendChild(btnR);
+  }
+  if (titulo) {
+    div.classList.add("movie-container");
+    main.classList.remove("containerF");
+    main.classList.add("container");
+  } else {
+    div.classList.add("movie-containerF");
+    main.classList.remove("container");
+    main.classList.add("containerF");
   }
 
   array.forEach((obj) => {
