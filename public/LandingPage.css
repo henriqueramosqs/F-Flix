@@ -95,6 +95,14 @@ a{
   color: #606060;
 }
 
+.participantescontainer a{
+  color: black;
+}
+
+.participantescontainer h1{
+  color: black;
+}
+
 @media (min-width: 359px) and (max-width: 1000px)  {
   header{
 
