@@ -3,6 +3,8 @@ const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo");
 const time = document.querySelector(".team");
 const aleatorio = document.querySelector("#random");
+let marginLAlta = 0;
+let marginLPopulares = 0;
 
 const urlInicial =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=904500eca10a6afd9905c36e0430cf63&language=en-US&page=1";
@@ -122,17 +124,54 @@ const createCard = (filme) => {
 
 // Só a section da pagina inicial recebe titulo
 const createCards = (array, titulo) => {
-  //console.log(array);
-  //console.log(titulo);
   let section = document.createElement("section");
-  if (titulo) {
-    let h1 = document.createElement("h2");
-    h1.textContent = titulo;
-    section.appendChild(h1);
-  }
-
   let div = document.createElement("div");
   div.classList.add("movie-container");
+
+  if (titulo) {
+    let h2 = document.createElement("h2");
+    h2.textContent = titulo;
+    section.appendChild(h2);
+    const btnL = document.createElement("button");
+    btnL.classList.add("btnL");
+    btnL.classList.add("btn");
+    const btnR = document.createElement("button");
+    btnR.classList.add("btnR");
+    btnR.classList.add("btn");
+
+    btnR.addEventListener("click", () => {
+      let marginEmAlta = titulo === "Em alta";
+      if (marginEmAlta) {
+        if (marginLAlta * -1 < 900) {
+          marginLAlta = marginLAlta - 200;
+          div.style.marginLeft = `${marginLAlta}px`;
+        }
+      } else {
+        if (marginLPopulares * -1 < 900) {
+          marginLPopulares = marginLPopulares - 200;
+          div.style.marginLeft = `${marginLPopulares}px`;
+        }
+      }
+    });
+
+    btnL.addEventListener("click", () => {
+      let marginEmAlta = titulo === "Em alta";
+      if (marginEmAlta) {
+        if (marginLAlta * -1 >= 200) {
+          marginLAlta = marginLAlta + 200;
+          div.style.marginLeft = `${marginLAlta}px`;
+        }
+      } else {
+        if (marginLPopulares * 1 >= 200) {
+          marginLPopulares = marginLPopulares + 200;
+          div.style.marginLeft = `${marginLPopulares}px`;
+        }
+      }
+    });
+
+    section.appendChild(btnL);
+    section.appendChild(btnR);
+  }
 
   array.forEach((obj) => {
     const { id, poster_path } = obj;
@@ -142,7 +181,6 @@ const createCards = (array, titulo) => {
         let card = createCard(filme);
         card.addEventListener("click", (e) => {
           let movieId = e.target;
-          console.log(movieId);
           movieId = movieId.parentNode.parentNode.id;
           pageTrailer(movieId);
         });
@@ -216,33 +254,37 @@ const randomFilme = async () => {
     randomFilme();
   }
 };
-aleatorio.addEventListener("click", () => {
-  randomFilme();
-});
 
-window.addEventListener("load", () => {
-  createInicialPage(urlInicial);
-});
-logo.addEventListener("click", () => {
-  createInicialPage(urlInicial);
-});
+const Init = () => {
+  window.addEventListener("load", () => {
+    createInicialPage(urlInicial);
+  });
 
-menu.addEventListener("click", (e) => {
-  //console.log(e.target);
-  let categoria = e.target.id;
-  let url;
-  let func = createPage;
+  menu.addEventListener("click", (e) => {
+    //console.log(e.target);
+    let categoria = e.target.id;
+    let url;
 
-  if (categoria === "inicio") {
-    url = urlInicial;
-    createInicialPage(url);
-  } else {
-    if (categoria === "filmes") {
-      url = urlFilmes;
+    if (categoria === "inicio") {
+      url = urlInicial;
+      createInicialPage(url);
+    } else {
+      if (categoria === "filmes") {
+        url = urlFilmes;
+      }
+      createPage(url);
     }
-    createPage(url);
-  }
-});
+  });
+
+  aleatorio.addEventListener("click", () => {
+    randomFilme();
+  });
+
+  logo.addEventListener("click", () => {
+    createInicialPage(urlInicial);
+  });
+};
+Init();
 
 //pro squad
 const membro1 = {
