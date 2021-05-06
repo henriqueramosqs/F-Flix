@@ -182,7 +182,7 @@ footer {
   }
 
   .btn-random > button {
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 3rem;
     font-weight: bold;
     line-height: 24px;
@@ -203,7 +203,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10%;
+    width: 15%;
     height: 100%;
   }
   .logo > img {
@@ -211,8 +211,11 @@ footer {
     height: 100%;
   }
   nav {
-    width: 50%;
+    width: 100%;
     margin-inline: 3rem;
+  }
+  .menu {
+    width: 40%;
   }
   .menu > li {
     font-size: 3rem;
@@ -289,9 +292,8 @@ footer {
 }
 
 .footer img {
-  margin: auto;
-  padding-top: 10px;
-  width: 70px;
+  margin: 1rem auto;
+  width: 3rem;
   display: block;
 }
 
@@ -306,7 +308,7 @@ footer {
 
 /*para squad*/
 
-.nossocontainer{
+.nossocontainer {
   width: auto;
   font-size: 1.8rem;
 }
