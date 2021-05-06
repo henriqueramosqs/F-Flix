@@ -162,7 +162,7 @@ const createCards = (array, titulo) => {
           div.style.marginLeft = `${marginLAlta}px`;
         }
       } else {
-        if (marginLPopulares * 1 >= 200) {
+        if (marginLPopulares * -1 >= 200) {
           marginLPopulares = marginLPopulares + 200;
           div.style.marginLeft = `${marginLPopulares}px`;
         }
