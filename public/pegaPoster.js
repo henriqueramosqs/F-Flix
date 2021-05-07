@@ -143,12 +143,12 @@ const createCards = (array, titulo) => {
       let marginEmAlta = titulo === "Em alta";
       if (marginEmAlta) {
         if (marginLAlta * -1 < 900) {
-          marginLAlta = marginLAlta - 200;
+          marginLAlta = marginLAlta - 300;
           div.style.marginLeft = `${marginLAlta}px`;
         }
       } else {
         if (marginLPopulares * -1 < 900) {
-          marginLPopulares = marginLPopulares - 200;
+          marginLPopulares = marginLPopulares - 300;
           div.style.marginLeft = `${marginLPopulares}px`;
         }
       }
@@ -157,13 +157,13 @@ const createCards = (array, titulo) => {
     btnL.addEventListener("click", () => {
       let marginEmAlta = titulo === "Em alta";
       if (marginEmAlta) {
-        if (marginLAlta * -1 >= 200) {
-          marginLAlta = marginLAlta + 200;
+        if (marginLAlta * -1 > 0) {
+          marginLAlta = marginLAlta + 300;
           div.style.marginLeft = `${marginLAlta}px`;
         }
       } else {
-        if (marginLPopulares * -1 >= 200) {
-          marginLPopulares = marginLPopulares + 200;
+        if (marginLPopulares * -1 > 0) {
+          marginLPopulares = marginLPopulares + 300;
           div.style.marginLeft = `${marginLPopulares}px`;
         }
       }
