@@ -391,6 +391,7 @@ footer {
   position: relative;
 }
 .participantescontainer {
+  text-align: center;
   display: grid;
   padding-left: 30px;
 }
