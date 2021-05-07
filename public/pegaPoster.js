@@ -342,14 +342,14 @@ const membro3 = {
   github: "https://github.com/henriqueramosqs",
 };
 const membro4 = {
-  nome: "Gabriel Pires",
-  linkedin: "https://www.linkedin.com/in/gabriel-r-pires/",
-  github: "https://github.com/DevGabrielPires",
-};
-const membro5 = {
   nome: "Renan Tomazini",
   linkedin: "https://www.linkedin.com/in/renan-tomazini-b9a75263/",
   github: "https://github.com/rtomazini42",
+};
+const membro5 = {
+  nome: "Gabriel Pires",
+  linkedin: "https://www.linkedin.com/in/gabriel-r-pires/",
+  github: "https://github.com/DevGabrielPires",
 };
 
 const membros = [membro1, membro2, membro3, membro4, membro5];
