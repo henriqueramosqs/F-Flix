@@ -9,7 +9,7 @@ const clearPage = () => {
 
 const createCard = (filme) => {
   let card = document.createElement("div");
-  card.classList.add("video");
+  //card.classList.add("video");
   card.id = filme[0];
 
   let divPoster = document.createElement("div");
@@ -96,12 +96,12 @@ time.addEventListener("click", (e) => {
   //let section = document.createElement("section");
   let div = document.createElement("div");
   div.classList.add("nossocontainer");
-  //div.classList.add("s-container");
+  div.classList.add("s-container");
   let filme = [1, "Squad 4", "nope.jpg", "5 pessoas, uma hackton."];
   let card = createCard(filme);
   image = card.querySelector("img").src = "public/PosterSquad4.gif";
-  //card.querySelector('.poster').classList.add("nossoCartaz");
-  //card.querySelector('.poster').classList.remove("poster");
+  card.querySelector('.poster').classList.add("nossoCartaz");
+  card.querySelector('.poster').classList.remove("video");
   //console.log(image);
   div.appendChild(card);
   //section.appendChild(div);

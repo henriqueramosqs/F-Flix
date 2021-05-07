@@ -305,6 +305,27 @@ window.addEventListener("resize", () => {
 Init();
 
 //pro squad
+
+const createNossoCard = (filme) => {
+  let card = document.createElement("div");
+  //card.classList.add("video");
+  card.id = filme[0];
+
+  let divPoster = document.createElement("div");
+  divPoster.classList.add("poster");
+  const url = `https://image.tmdb.org/t/p/w500/${filme[1]}`;
+  let poster = document.createElement("img");
+  poster.src = url;
+
+  divPoster.appendChild(poster);
+
+  card.appendChild(divPoster);
+
+  return card;
+};
+
+
+
 const membro1 = {
   nome: "Matheus de Gondra",
   linkedin: "https://www.linkedin.com/mwlite/in/matheus-gondra-a187a81a3",
@@ -371,13 +392,14 @@ time.addEventListener("click", (e) => {
   div.classList.add("nossocontainer");
   //div.classList.add("s-container");
   let filme = [1, "Squad 4", "nope.jpg", "5 pessoas, uma hackton."];
-  let card = createCard(filme);
+  let card = createNossoCard(filme);
   image = card.querySelector("img").src = "public/PosterSquad4.gif";
+  //video = card.querySelector("img")classList.remove(".video");
   //card.querySelector('.poster').classList.add("nossoCartaz");
-  //card.querySelector('.poster').classList.remove("poster");
   //console.log(image);
   div.appendChild(card);
   //section.appendChild(div);
   main.appendChild(div);
   participantes();
+  //console.log(a);
 });

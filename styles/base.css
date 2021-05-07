@@ -7,7 +7,7 @@
 html{
     font-size: 62.5%;
 }
-  
+
 body{
     background-color: rgba(20, 20, 20, 1);
     font-family: 'Roboto', sans-serif;
@@ -23,7 +23,7 @@ header{
 a{
     cursor: pointer;
   }
-  
+
 a:hover{
     color: rgb(146, 146, 146);
     transition: 0.5s;
@@ -50,7 +50,7 @@ nav{
     font-size: 2rem;
 
 }
-  
+
 .logo{
     text-align: center;
     color: white;
@@ -68,14 +68,14 @@ nav{
     align-items: center;
     text-align: center;
   }
-  
+
   .footer img{
     margin: auto;
     padding-top: 10px;
     width: 70px;
     display: block;
   }
-  
+
   .footer a{
     display:inline-table;
     align-items: center;
@@ -83,4 +83,5 @@ nav{
     margin: 20px;
     color: #606060;
   }
+
   
