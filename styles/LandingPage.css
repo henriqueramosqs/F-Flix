@@ -92,8 +92,9 @@ nav {
 .movie-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, minmax(100px, 400px));
+  grid-template-columns: repeat(3, minmax(100px, 300px));
   padding: 1rem;
+  left: 0;
 }
 
 .video {
