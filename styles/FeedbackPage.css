@@ -3,6 +3,8 @@ body{
     height: 100%;
 }
 
+
+
 a{
     color: white;
     font-size: 3rem;
@@ -20,7 +22,7 @@ form{
     padding-top: 45px;
 }
 
-label,form,input,button{
+label,form,input,button, textarea{
     border-radius: 10px;
 }
 #nome{
@@ -35,7 +37,7 @@ label{
     color: #FFFFFF;
 }
 
-input:hover, input:focus, button:hover, button:focus{
+input:hover, input:focus, button:hover, button:focus, textarea{
     outline: none  !important;
     border-radius: 10px;
     border-width: 1px;
@@ -61,6 +63,18 @@ input{
     margin: auto;
     display: block;
     text-align:start
+}
+
+textarea{
+    border-radius: 10px;
+    color: #000000;
+    padding-left: 17px;
+    width: 450px;
+    background-color: #FFFFFF;
+    border-width: 0px;
+    margin: auto;
+    display: block;
+    text-align: start;
 }
 
 #mensage{
@@ -123,6 +137,21 @@ button:active{font-size: 18px;padding: 10px;}
         grid-template-rows: 1fr 1fr 3fr 1fr;
     }
 
+    .header-feedback{
+        
+        display: flex;
+        flex-direction: column;
+        background: #fb4300;
+    }
+
+    ul, li{
+        display: flex;
+    }
+
+    li{
+        justify-content: fle;
+    }
+
     nav{
         width: 90%;
         margin-left: 22px;
@@ -146,6 +175,10 @@ button:active{font-size: 18px;padding: 10px;}
 
     input{
         width: 220px
+    }
+
+    textarea{
+        width: 220px;
     }
 
     button{
