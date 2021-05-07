@@ -293,6 +293,15 @@ const Init = () => {
     createInicialPage(urlInicial);
   });
 };
+
+window.addEventListener("resize", () => {
+  if (main.clientWidth < 768) {
+    let divs = document.querySelectorAll(".movie-container");
+    divs.forEach((div) => {
+      div.style.marginLeft = "0px";
+    });
+  }
+});
 Init();
 
 //pro squad
