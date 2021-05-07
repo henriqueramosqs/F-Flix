@@ -92,8 +92,9 @@ nav {
 .movie-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, minmax(100px, 400px));
+  grid-template-columns: repeat(3, minmax(100px, 300px));
   padding: 1rem;
+  left: 0;
 }
 
 .video {
@@ -360,7 +361,7 @@ footer {
 }
 
 .nossocontainer img {
-  width: 130%;
+  width: 50%;
   /*position: relative;*/
   top: 50px;
 }

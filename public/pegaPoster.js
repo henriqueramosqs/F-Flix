@@ -293,6 +293,15 @@ const Init = () => {
     createInicialPage(urlInicial);
   });
 };
+
+window.addEventListener("resize", () => {
+  if (main.clientWidth < 768) {
+    let divs = document.querySelectorAll(".movie-container");
+    divs.forEach((div) => {
+      div.style.marginLeft = "0px";
+    });
+  }
+});
 Init();
 
 //pro squad
@@ -363,7 +372,7 @@ time.addEventListener("click", (e) => {
   //div.classList.add("s-container");
   let filme = [1, "Squad 4", "nope.jpg", "5 pessoas, uma hackton."];
   let card = createCard(filme);
-  image = card.querySelector("img").src = "public/cartazSquad4.jpg";
+  image = card.querySelector("img").src = "public/PosterSquad4.gif";
   //card.querySelector('.poster').classList.add("nossoCartaz");
   //card.querySelector('.poster').classList.remove("poster");
   //console.log(image);
