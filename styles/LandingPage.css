@@ -169,7 +169,7 @@ footer {
   body {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 10rem 1fr 10rem;
+    grid-template-rows: 10rem 1fr 11rem;
   }
   header {
     display: flex;
@@ -391,6 +391,7 @@ footer {
   position: relative;
 }
 .participantescontainer {
+  font-size: 62.5%;
   text-align: center;
   display: grid;
   padding-left: 30px;
