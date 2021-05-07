@@ -1,5 +1,6 @@
 body{
-    grid-template-rows: 12rem 1fr 10rem 6fr;
+    grid-template-rows: 12rem 7fr 1fr;
+    height: 100%;
 }
 
 a{
@@ -14,7 +15,7 @@ a{
 form{
     background: #fb4300;
     width: 562px;
-    height: 555px;
+    height: 580px;
     margin:auto;
     padding-top: 45px;
 }
@@ -45,17 +46,17 @@ h1{
     font-family: "Roboto",sans-serif;
     font-size: 40px;
     font-weight: 700;
-    color: rgb(250,250,250);
+    color: #000000;
     margin: 17px auto;
     width: fit-content;
 }
 
 input{
     height: 30px;
-    color: rgb(250,250,250,46%);
+    color: #000000;
     padding-left: 17px;
     width: 450px;
-    background-color: rgb(137,73,50);
+    background-color: #FFFFFF;
     border-width: 0px;
     margin: auto;
     display: block;
@@ -71,8 +72,8 @@ button{
     margin-top: 20px;
     font-size: 20px;
     padding: 10px;
-    background-color: rgb(137,73,50);
-    color: rgb(250,250,250,0.6)
+    background-color: #FFFFFF;
+    color: #fb4300;
 }
 
 
@@ -80,7 +81,7 @@ button:hover, button:focus{padding: 9px;}
 button:active{font-size: 18px;padding: 10px;}
 
 .footer{
-    grid-row-start: 5;
+    grid-row-start: 3;
 }
 
 .hidden{
@@ -158,7 +159,7 @@ button:active{font-size: 18px;padding: 10px;}
     }
 }
 
-@media screen and (min-width: 376px){
+@media screen and (max-width: 376px){
     body{
         height: 100vh;
         grid-template-rows: 1fr 1fr 3fr 1fr;
@@ -222,7 +223,7 @@ button:active{font-size: 18px;padding: 10px;}
 
     form{
         width: 283px;
-        height: 372px;
+        height: 460px;
     }
 
     label{
