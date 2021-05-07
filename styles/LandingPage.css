@@ -231,8 +231,15 @@ footer {
   .container > section {
     margin-bottom: 2rem;
     width: 768px;
-    height: 50%;
+    height: 30rem;
     position: relative;
+  }
+  .movie-container {
+    display: grid;
+    position: absolute;
+    gap: 2rem;
+    grid-template-columns: repeat(10, minmax(150px, 250px));
+    margin-left: 0;
   }
 
   .containerF {
@@ -246,14 +253,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(5, minmax(200px, 1fr));
     gap: 2rem;
-  }
-
-  .movie-container {
-    display: grid;
-    position: absolute;
-    gap: 2rem;
-    grid-template-columns: repeat(10, minmax(150px, 250px));
-    margin-left: 0;
   }
 
   .btn {
