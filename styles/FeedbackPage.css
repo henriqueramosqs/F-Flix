@@ -66,9 +66,9 @@ textarea {
 
 h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 700;
-  color: #000000;
+  color: #555;
   margin: 17px auto;
   width: fit-content;
 }
