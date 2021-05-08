@@ -287,6 +287,7 @@ const Init = () => {
   });
 
   logo.addEventListener("click", () => {
+    clearPage();
     createInicialPage(urlInicial);
   });
 };
