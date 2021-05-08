@@ -297,6 +297,7 @@ footer {
 
   section.trailer-container {
     width: 100%;
+    max-width: 120rem;
     padding: 1rem;
     display: flex;
   }
@@ -391,7 +392,6 @@ footer {
   position: relative;
 }
 .participantescontainer {
-
   text-align: center;
   display: grid;
   padding-left: 30px;
