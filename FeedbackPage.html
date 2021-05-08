@@ -32,11 +32,9 @@
       <div class="logo">
         <img src="public/logotipo.svg" alt="Logotipo da F Flix" />
       </div>
-      <nav>
-        <ul class="menu">
-          <li><a href="LandingPage.html" class="video_category">Voltar</a></li>
-        </ul>
-      </nav>
+      <div class="voltar">
+        <a href="LandingPage.html" class="video_category">Voltar</a>
+      </div>
     </header>
 
     <main>
@@ -49,7 +47,7 @@
         <input type="email" id="email" required />
 
         <label for="mensage">Mensagem</label>
-        <textarea id="mensage" type="text" id="mensage" required ></textarea>
+        <textarea id="mensage" type="text" id="mensage" required></textarea>
         <button type="button" id="enviar" onclick="verificarInput()">
           Enviar
         </button>
@@ -60,7 +58,6 @@
       <a href="FeedbackPage.html">Enviar feedback</a>
       <a class="team">© 2021, squad-4</a>
     </footer>
-
 
     <script type="text/javascript">
       function verificarInput() {
