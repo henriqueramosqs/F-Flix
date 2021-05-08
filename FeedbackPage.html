@@ -95,7 +95,8 @@
         botao.setAttribute("id", "voltar");
 
         document.body.appendChild(retorno);
-        document.body.insertBefore(retorno, document.querySelector(".footer"));
+        const main = document.querySelector("main");
+        main.appendChild(retorno)
         retorno.innerHTML =
           "<a id ='carregando'class='msg_de_retorno'>Aguarde, seu feedback está sendo enviado...</a>";
 

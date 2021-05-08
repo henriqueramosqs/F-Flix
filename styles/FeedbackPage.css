@@ -76,7 +76,7 @@ input {
 textarea {
   border-radius: 10px;
   color: #000000;
-  padding-left: 17px;
+  padding: 17px;
   width: 450px;
   background-color: #ffffff;
   border-width: 0px;
