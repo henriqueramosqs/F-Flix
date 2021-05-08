@@ -22,6 +22,7 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 4rem;
   background: #fb4300;
+  padding: 1rem;
 }
 
 .logo {
@@ -46,7 +47,7 @@ nav {
 }
 
 .btn-random > button {
-  padding: 0.5rem;
+  padding: 1rem 2rem;
   font-size: 2rem;
   color: #fb4300;
   background: #fffafa;
@@ -77,6 +78,13 @@ nav {
   height: 100%;
   font-size: 2.2rem;
   cursor: pointer;
+}
+li > a:hover {
+  padding: 0.8rem 2rem;
+  background: white;
+  color: #fb4300;
+  border: 3px solid white;
+  border-radius: 1rem;
 }
 
 /* main styles*/
