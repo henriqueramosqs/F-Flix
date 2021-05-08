@@ -1,5 +1,6 @@
 const main = document.querySelector("main");
 const menu = document.querySelector(".menu");
+const hd = document.querySelectorAll(".hd");
 const logo = document.querySelector(".logo");
 const time = document.querySelector(".team");
 const aleatorio = document.querySelector("#random");
@@ -267,19 +268,19 @@ const Init = () => {
     createInicialPage(urlInicial);
   });
 
-  menu.addEventListener("click", (e) => {
-    let categoria = e.target.id;
+  hd.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const categoria = e.target.id;
 
-    if (categoria === "inicio") {
-      clearPage();
-      createInicialPage(urlInicial);
-    } else {
-      if (categoria === "filmes") {
+      if (categoria === "inicio") {
         clearPage();
-        createPage(urlInicial);
+        createInicialPage(urlInicial);
+      } else if (categoria === "filmes") {
+        clearPage();
         createPage(urlFilmes);
+        createPage(urlInicial);
       }
-    }
+    });
   });
 
   aleatorio.addEventListener("click", () => {
