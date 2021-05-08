@@ -12,13 +12,13 @@ body {
   margin-inline: 3rem;
 }
 
-a {
+.voltar > a {
   color: white;
   font-size: 3rem;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
 }
-a:hover {
+.voltar > a:hover {
   background: white;
   color: #fb4300;
   padding: 1rem 2rem;
