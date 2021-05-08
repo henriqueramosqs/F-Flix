@@ -3,15 +3,27 @@ body {
   height: 100%;
 }
 
+.header-feedback {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 .voltar {
   margin-inline: 3rem;
 }
 
-a {
+.voltar > a {
   color: white;
   font-size: 3rem;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
+}
+.voltar > a:hover {
+  background: white;
+  color: #fb4300;
+  padding: 1rem 2rem;
+  border: 3px solid white;
+  border-radius: 1rem;
 }
 
 form {
@@ -147,6 +159,12 @@ button:active {
   body {
     height: 100vh;
     grid-template-rows: 1fr 1fr 3fr 1fr;
+  }
+  .header-feedback {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   h1 {
