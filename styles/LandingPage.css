@@ -88,7 +88,8 @@ li > a:hover {
 }
 
 /* main styles*/
-.container {
+.container,
+.containerF {
   margin: 0 auto;
 }
 .container > section {
@@ -97,14 +98,14 @@ li > a:hover {
 .container h2 {
   padding-inline: 3rem;
 }
-.movie-container {
+.movie-container,
+.movie-containerF {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, minmax(100px, 300px));
   padding: 1rem;
   left: 0;
 }
-
 .video {
   padding: 1rem;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
