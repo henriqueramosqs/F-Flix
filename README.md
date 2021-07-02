@@ -1,5 +1,5 @@
 # F Flix
-  &nbsp; Este projeto, que tem como intuito simular um serviço de streaming, foi desenvolvido para paticipar da Hackathon Imersão Dev Alura & FCamara. Sua criação envolveu, além de ferrramentas tradicionais de desenvolvimento web, o consumo de API's externas e fideliade a um workflow para trabalaho em grupo usando o Git.
+  &nbsp;  Este projeto, que tem como intuito simular um serviço de streaming, foi desenvolvido para participar da Hackathon Imersão Dev Alura & FCamara. Sua criação envolveu, além de ferramentas tradicionais de desenvolvimento web, o consumo de API's externas e fidelidade a um workflow para trabalho em grupo usando o Git.
 
 ## Link para o projeto
   &nbsp; https://henriqueramosqs.github.io/squad_04/LandingPage.html
@@ -20,7 +20,7 @@
   <br>
    &nbsp; <a href="https://www.linkedin.com/in/henrique-ramos-02b4151b0/">Henrique Ramos</a>
   <br>
-   &nbsp;<a href="https://www.linkedin.com/in/renan-tomazini-b9a75263/">Renan Tomazini</a>
+   &nbsp; <a href="https://www.linkedin.com/in/renan-tomazini-b9a75263/">Renan Tomazini</a>
   <br>
    &nbsp; <a href="https://www.linkedin.com/in/gabriel-r-pires/">Gabriel Pires</a>
   <br>
