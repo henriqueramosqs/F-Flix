@@ -1,5 +1,5 @@
 # F Flix
-  &nbsp;  This application, which simulates a streaming service, was designed for competing in Imersão Dev Alura & FCamara`s Hackathons. It`s development envolved traditional web progrmaming tools, external API`s use and fidelity to a Git workflow.
+  &nbsp;  This application, which simulates a streaming service, was designed for competing in Imersão Dev Alura & FCamara\`s Hackathons. It\`s development envolved traditional web progrmaming tools, external API\`s use and fidelity to a Git workflow.
   
 
 ## Project link
