@@ -1,10 +1,11 @@
 # F Flix
-  &nbsp;  Este projeto, que tem como intuito simular um serviço de streaming, foi desenvolvido para participar da Hackathon Imersão Dev Alura & FCamara. Sua criação envolveu, além de ferramentas tradicionais de desenvolvimento web, o consumo de API's externas e fidelidade a um workflow para trabalho em grupo usando o Git.
+  &nbsp;  This application, which simulates a streaming service, was designed for competing in Imersão Dev Alura & FCamara`s Hackathons. It`s development envolved traditional web progrmaming tools, external API`s use and fidelity to a Git workflow.
+  
 
-## Link para o projeto
+## Project link
   &nbsp; https://henriqueramosqs.github.io/squad_04/LandingPage.html
   <br>
-## Tecnologias utilizadas
+## Technologies used
 
 <img align="left" alt="nodejs" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white" />
 <img align="left" alt="html" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
@@ -15,7 +16,7 @@
 <img align="left" alt="Figma" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
 <br>
 
-## Membros do grupo
+## Group members
  &nbsp; <a href= "https://www.linkedin.com/in/matheus-gondra-a187a81a3/">Matheus Gondra</a>
   <br>
    &nbsp; <a href="https://www.linkedin.com/in/henrique-ramos-02b4151b0/">Henrique Ramos</a>
